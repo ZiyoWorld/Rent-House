@@ -32,6 +32,7 @@ namespace Houzing.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
+
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             IUserStore<ApplicationUser> userStore,
@@ -45,6 +46,7 @@ namespace Houzing.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+
         }
 
         /// <summary>
@@ -132,8 +134,8 @@ namespace Houzing.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
-                    await _userManager.AddToRoleAsync(user, Roles.Employer.ToString());
+                    //await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
+                    //await _userManager.AddToRoleAsync(user, Roles.Employer.ToString());
                     await _userManager.AddToRoleAsync(user, Roles.User.ToString());
                     _logger.LogInformation("User created a new account with password.");
 

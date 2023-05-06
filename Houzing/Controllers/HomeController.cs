@@ -25,7 +25,7 @@ namespace Houzing.Controllers
             return View();
         }
 
-        [Authorize(Roles ="Admin, Employer")]
+        [Authorize(Roles ="Admin")]
         public IActionResult Users()
         {
             return View();
