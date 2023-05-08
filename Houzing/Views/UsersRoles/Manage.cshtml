@@ -1,34 +1,18 @@
-﻿@using Houzing.Data;
-@model List<ManageUserRolesViewModel>
-@{
-    ViewData["Title"] = "Manage";
-    Layout = "~/Views/UsersRoles/_RolesLayout.cshtml";
-}
-<form method="post">
-    <div class="card">
-        <div class="card-header">
-            <h2>ManageUserRoles</h2>
-            <p>Add/Remove/ Roles for Users / @ViewBag.UserName</p>
-        </div>
-        <div class="card-body">
-            @for(int i = 0; i < Model.Count; i++)
-            {
-                <div class="form-check m-1">
-                    <input type="hidden" asp-for="@Model[i].RoleId" />
-                    <input type="hidden" asp-for="@Model[i].RoleName" />
-                    <input asp-for="@Model[i].Selected" class="form-check-input" />
-                    <label class="form-check-label" asp-for="@Model[i].Selected">
-                        @Model[i].RoleName
-                    </label>
-                </div>
-            }
-            <div asp-validation-summary="All" class="text-danger"></div>
-        </div>
-        <div class="card-footer">
-            <input type="submit" value="Update" class="btn btn-primary"
-                   style="width:auto" />
-            <a asp-action="EditUser" asp-route-id="@ViewBag.userId"
-               class="btn btn-primary" style="width:auto">Cancel</a>
-        </div>
+﻿@using Microsoft.AspNetCore.Identity;
+@model Houzing.Data.ChangeUsersRoles;
+
+<h2>Изменение ролей для пользователя @Model.UserEmail</h2>
+
+<form asp-action="Manage" method="post">
+    <input type="hidden" name="userId" value="@Model.UserId" />
+    <div class="form-group">
+        @foreach (IdentityRole role in Model.AllRoles)
+        {
+            <input type="checkbox" name="roles" value="@role.Name"
+               @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />
+
+            @role.Name <br />
+        }
     </div>
+    <button type="submit" class="btn btn-primary">Save</button>
 </form>

@@ -64,63 +64,61 @@ namespace Houzing.Controllers
             return RedirectToAction("AddRole");
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Manage(string userId)
-        //{
-        //    ViewBag.userId = userId;
-        //    var user = await _userManager.FindByIdAsync(userId);
-        //    if (user == null)
-        //    {
-        //        ViewBag.ErrorMessage = $"User with Id = {userId} cannot be found";
-        //        return View("NotFound");
-        //    }
-        //    ViewBag.UserName = user.UserName;
-        //    var model = new List<ManageUserRolesViewModel>();
-        //    foreach (var role in _roleManager.Roles)
-        //    {
-        //        var userRolesViewModel = new ManageUserRolesViewModel
-        //        {
-        //            RoleId = role.Id,
-        //            RoleName = role.Name
-        //        };
-        //        if (await _userManager.IsInRoleAsync(user, role.Name))
-        //        {
-        //            userRolesViewModel.Selected = true;
-        //        }
-        //        else
-        //        {
-        //            userRolesViewModel.Selected = false;
-        //        }
-        //        model.Add(userRolesViewModel);
-        //    }
-        //    return View(model);
-        //}
+        /// <summary>
+        /// Manage button we can change our roles of users
+        /// 
+        /// </summary>
+        public async Task<IActionResult> Manage(string UserId)
+        {
+            // получаем пользователя
+            var user = await _userManager.FindByIdAsync(UserId);
+            if (user != null)
+            {
+                // получем список ролей пользователя
+                var userRoles = await _userManager.GetRolesAsync(user);
+                var allRoles = _roleManager.Roles.ToList();
+                var model = new ChangeUsersRoles
+                {
+                    UserId = user.Id,
+                    UserEmail = user.Email,
+                    UserRoles = userRoles,
+                    AllRoles = allRoles
+                };
+                return View(model);
+            }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Manage(List<ManageUserRolesViewModel> model, string userId)
-        //{
-        //    var user = await _userManager.FindByIdAsync(userId);
-        //    if (user == null)
-        //    {
-        //        return View();
-        //    }
-        //    var roles = await _userManager.GetRolesAsync(user);
-        //    var result = await _userManager.RemoveFromRolesAsync(user, roles);
-        //    if (!result.Succeeded)
-        //    {
-        //        ModelState.AddModelError("", "Cannot remove user existing roles");
-        //        return View(model);
-        //    }
-        //    result = await _userManager.AddToRolesAsync(user, model.Where(x => x.Selected).Select(y => y.RoleName));
-        //    if (!result.Succeeded)
-        //    {
-        //        ModelState.AddModelError("", "Cannot add selected roles to user");
-        //        return View(model);
-        //    }
-        //    return RedirectToAction("Index");
-        //}
+            return NotFound();
+        }
+        
 
+        
+        [HttpPost]
+        public async Task<IActionResult> Manage(string UserId, List<string> roles)
+        {
+            // taking users
+            var user = await _userManager.FindByIdAsync(UserId);
+            if (user != null)
+            {
+                // taking list that is roles of users
+                var userRoles = await _userManager.GetRolesAsync(user);
+                // taking all rules
+                var allRoles = _roleManager.Roles.ToList();
+                // taking list that had added
+                var addedRoles = roles.Except(userRoles);
+                // taking roles that had deleted
+                var removedRoles = userRoles.Except(roles);
 
+                await _userManager.AddToRolesAsync(user, addedRoles);
+
+                await _userManager.RemoveFromRolesAsync(user, removedRoles);
+
+                return RedirectToAction("Index");
+            }
+
+            return NotFound();
+        }
+
+        
 
         [HttpPost]
         public async Task<ActionResult> Delete(string id)
