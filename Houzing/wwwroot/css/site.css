@@ -22,6 +22,16 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/*header*/
+header{
+    height: 64px;
+    width: 100%;
+}
+nav {
+    background-color: #0D263B;
+    padding: 0 130px;
+    color: white;
+}
 
 /*tab navigation*/
 .login-logout-card .card-header {

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Houzing.Data.UserRolesViewModel>
+
+@{
+    ViewBag.Title = "List Users";
+    Layout = "~/Views/UsersRoles/_RolesLayout.cshtml";
+}
+
+<h1>List Users </h1>
+<h4>You can manage all Users</h4>
+
+<a class="btn btn-primary mb-3" href="~/UsersRoles/AddRole">Add Roles</a>
+
+<table class="table table-bordered table-hover table-responsive" border="1">
+    <tr>
+        <th>Email</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Role</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Email</td>
+            <td>@user.FirstName</td>
+            <td>@user.LastName</td>
+            <td>@string.Join(" , ", user.Roles.ToList())</td>
+            <td>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete Role
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete Role</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                You are deleting Role <h1 class="text-danger">@user.Email</h1>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <form asp-action="Delete" asp-route-id="@user.UserId" method="post">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*modal trigger*@
+            </td>
+        </tr>
+    }
+</table>
