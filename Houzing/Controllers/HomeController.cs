@@ -19,6 +19,17 @@ namespace Houzing.Controllers
             return View();
         }
 
+        public IActionResult Properties()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+
 
 
 

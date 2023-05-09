@@ -33,8 +33,16 @@
       "PackagePath": "staticwebassets\\Uploads\\d7cb139b-6e5d-4994-8950-fe0dedd61b20.jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\1-uy.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\1-uy.jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\1345874.png",
       "PackagePath": "staticwebassets\\assets\\imgs\\1345874.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\2-uy.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\2-uy.jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\edit-new-icon-22.png",
