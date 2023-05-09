@@ -1,0 +1,23 @@
+﻿//========= 1 day ============
+
+---database ✔
+---programs ✔
+---sqlserver fixed ✔
+
+//========= 2 day ============
+--- register page
+--- login page 
+
+//========= 3 day ============
+--- dizayn to project 
+--- navbar fixed
+
+//========= 4 day ============
+--- role admin, user, employer
+--- manager all users
+
+//========= 5 day ============ 09.05.2023
+--- Home index dizayn 
+--- carousel 
+--- all carousel
+--- database of houses

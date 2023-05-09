@@ -2,11 +2,6 @@ html {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -15,6 +10,8 @@ html {
 html {
   position: relative;
   min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -23,14 +20,168 @@ body {
 }
 
 /*header*/
-header{
-    height: 64px;
-    width: 100%;
-}
+
 nav {
     background-color: #0D263B;
-    padding: 0 130px;
+    padding: 5px 130px;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 5px;
+    transition: transform 0.5s linear;
+}
+.nav-links{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+.nav-links li{
+    margin: 0 15px;
+    margin-top: 15px;
+}
+.nav-links li a{
+    text-decoration: none;
+    font-size: 18px;
+}
+.nav-links li a:active{
+    color: firebrick;
+    transition: all 0.5s linear;
+}
+.logo-text{
+    font-size: 18px;
+}
+
+.close-X{
+    display: none;
+    cursor: pointer;
+   transform: scale(1.4);
+}
+
+.btn-section {
+    display: flex;
+}
+.add-section-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+/*navbar media*/
+@media (min-width: 0px) and (max-width: 375px) {
+    header{
+      width: 100%;  
+      margin: 0;
+      padding: 0;
+    }
+    .burger {
+        display: block;
+    }
+    .logo-text{
+        font-size: 25px;
+    }
+    nav{
+        position: relative;
+        padding: 0 16px;
+        display: flex;
+        width: 100%;
+        max-width: 375px;
+    }
+    
+    .nav-links{
+        display: none;
+        flex-direction: column;
+    }
+    .btn-section{
+        display: none;
+    }
+    .nav-active {
+        height: 100vh;
+        align-items: start;
+        padding-top: 10px;
+    }
+    .add-section-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .font-size-sm{
+        font-size: 14px;
+    }
+}
+@media (min-width: 0px) and (max-width: 767px) {
+    header {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .burger {
+        display: block;
+        padding-top: 10px;
+    }
+    .close-X{
+        padding-top: 10px;
+    }
+    .add-section-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav {
+        position: relative;
+        padding: 0 32px;
+        display: flex;
+        width: 100%;
+        max-width: 767px;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        /*position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);*/
+    }
+    .nav-links li a{
+        font-size: 30px;
+    }
+    .btn-section {
+        display: none;
+    }
+    .nav-active {
+        height: 100vh;
+        align-items: start;
+        padding-top: 10px;
+    }
+    .nav-links-active{
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .nav-links-active li{
+        font-size: 30px;
+    }
+    
+}
+main{
+    padding:0;
+    margin: 0;
 }
 
 /*tab navigation*/

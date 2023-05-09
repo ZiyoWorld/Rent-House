@@ -6,13 +6,13 @@
 
 @if(User.IsInRole("Admin"))
 {
-    <a class="btn btn-danger text-white mx-2 text-dark" asp-controller="UsersRoles" asp-action="Index">Manage User</a>
+    <a class="btn btn-danger text-white mx-2 text-dark font-size-sm" asp-controller="UsersRoles" asp-action="Index">Manage User</a>
 }
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <div class="dropdown">
-        <button class="btn btn-primary  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="dropdown dropdown-sm-start">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             Admin
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
