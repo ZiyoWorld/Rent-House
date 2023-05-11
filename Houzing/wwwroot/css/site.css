@@ -13,14 +13,19 @@ html {
   margin: 0;
   padding: 0;
 }
+.container-pad{
+    margin: 0;
+    padding: 0;
+}
 
 body {
     margin-bottom: 60px;
     font-family: 'Roboto', sans-serif;
 }
-
+.role-page{
+    padding: 0 130px;
+}
 /*header*/
-
 nav {
     background-color: #0D263B;
     padding: 5px 130px;
@@ -62,12 +67,15 @@ nav {
 }
 .logo-text{
     font-size: 18px;
+    margin-top: 10px;
+    padding-left: 20px;
 }
 
-.close-X{
+
+.close-X {
     display: none;
     cursor: pointer;
-   transform: scale(1.4);
+    transform: scale(1.4);
 }
 
 .btn-section {
@@ -78,6 +86,54 @@ nav {
     justify-content: center;
     align-items: center;
 }
+/*main section*/
+
+.carousel{
+    position: relative;
+}
+.dark-black{
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    height: 520px;
+}
+.text-image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.text-image h1, p, h3{
+    color: #fff;
+    text-align: center;
+    transform: scale(1.6)
+}
+.main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 1440px;
+}
+.home-main{
+    width: 100%;
+    max-width: 1440px;
+}
+
+.container-main {
+    margin: 0;
+    padding: 0;
+}
+.carousel{
+    margin-top: 20px;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 /*navbar media*/
 @media (min-width: 0px) and (max-width: 375px) {
     header{
@@ -85,8 +141,8 @@ nav {
       margin: 0;
       padding: 0;
     }
-    .burger {
-        display: block;
+    .role-page{
+        padding: 0 16px;
     }
     .logo-text{
         font-size: 25px;
@@ -97,6 +153,12 @@ nav {
         display: flex;
         width: 100%;
         max-width: 375px;
+    }
+    .role-page {
+        padding: 0 16px;
+    }
+    .auth-layout {
+        padding: 0 16px;
     }
     
     .nav-links{
@@ -117,8 +179,18 @@ nav {
         justify-content: center;
         align-items: center;
     }
+    .active-burger {
+        display: block;
+    }
+
+    .close-burger {
+        display: none;
+    }
     .font-size-sm{
         font-size: 14px;
+    }
+    .burger{
+        display: block;
     }
 }
 @media (min-width: 0px) and (max-width: 767px) {
@@ -127,12 +199,18 @@ nav {
         padding: 0;
         margin: 0;
     }
+    .auth-layout {
+        padding: 0 32px;
+    }
     .burger {
         display: block;
         padding-top: 10px;
     }
     .close-X{
         padding-top: 10px;
+    }
+    .role-page {
+        padding: 0 32px;
     }
     .add-section-btn {
         display: flex;
@@ -177,12 +255,20 @@ nav {
     .nav-links-active li{
         font-size: 30px;
     }
-    
+    .role-page {
+        padding: 0 16px;
+    }
+    .active-burger {
+        display: block;
+    }
+
+    .close-burger {
+        display: none;
+    }
 }
-main{
-    padding:0;
-    margin: 0;
-}
+
+
+
 
 /*tab navigation*/
 .login-logout-card .card-header {

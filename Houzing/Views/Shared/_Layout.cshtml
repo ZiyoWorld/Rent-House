@@ -6,16 +6,16 @@
     <title>@ViewData["Title"] Houzing</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/sitehome.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Houzing.styles.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:wght@700&display=swap" rel="stylesheet">
-
 </head>
 <body>
         <header>
             <nav class="nav-js">
                 <a class="navbar-brand d-inline-flex text-white" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="/assets/imgs/logo.png" alt="logo" style="width: 30px; height: 36px;" />
-                    <p class="h4 m-2 logo-text">Houzing</p>
+                    <p class="h4 mx-2 logo-text">Houzing</p>
                 </a>
                 <div class="burger" onclick="navAnim()">
                     <div class="line-1"></div>
@@ -43,14 +43,15 @@
             </nav>
         </header>
 
-   
-    
-    
-    <div class="container-fluid">
-        <main role="main" class="">
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+    
 
     <footer class="border-top footer text-muted">
         <div class="container">

@@ -46,3 +46,8 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+@media (min-width: 0) and (min-width: 375px){
+    .role-page{
+        padding: 0 16px;
+    }
+}

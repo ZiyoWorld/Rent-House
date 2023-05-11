@@ -46,3 +46,8 @@ button.accept-policy[b-8f737sk2jy] {
   white-space: nowrap;
   line-height: 60px;
 }
+@media (min-width: 0) and (min-width: 375px){
+    .role-page[b-8f737sk2jy]{
+        padding: 0 16px;
+    }
+}
