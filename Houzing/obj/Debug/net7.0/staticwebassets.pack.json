@@ -45,6 +45,22 @@
       "PackagePath": "staticwebassets\\assets\\imgs\\2-uy.jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\V1.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\V1.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\V2.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\V2.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\V3.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\V3.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\V4.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\V4.png"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\edit-new-icon-22.png",
       "PackagePath": "staticwebassets\\assets\\imgs\\edit-new-icon-22.png"
     },

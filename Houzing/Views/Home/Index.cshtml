@@ -1,8 +1,8 @@
 ﻿@{
     Layout = "~/Views/Home/_HomeLayout.cshtml";
 }
-
-  <div class="container-fluid p-0 m-0">
+<section class="section-home">
+  <div class="container-fluid">
   <div id="carouselExampleIndicators" class="carousel slide" style="height: 85vh;" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -13,7 +13,7 @@
             <img src="/assets/imgs/1-uy.jpg" class="d-block w-100" style="height: 520px; width: 100%;" alt="...">
         </div>
         <div class="carousel-item">
-                <img src="/assets/imgs/2-uy.jpg" class="d-block w-100" style="height: 520px; width: 100%;" alt="...">
+            <img src="/assets/imgs/2-uy.jpg" class="d-block w-100" style="height: 520px; width: 100%;" alt="...">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -33,7 +33,59 @@
   </div>
   </div>
 
+    @*this page for recommend that it has rented recently by customers*@
+  <div class="recommend">
+       <h1 class="text-center">Recommended</h1>
+       <div class="text-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
+  </div>
 
+  <div class="why-choose">
+   
+      <h1 class="text-center">Why Choose Us</h1>
+       <div class="text-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
+      <div class="rows-why">
+          <div class="card-why">
+              <img src="~/assets/imgs/V1.png" alt="card-why" />
+                <h3>Trusted By Thousands</h3>
+                <p>
+                    With over 1 million+ homes for sale available on the website, Trulia can match you with a house you will want to call home.
+                </p>
+          </div>
+            <div class="card-why">
+                <img src="~/assets/imgs/V2.png" alt="card-why" />
+                <h3>Wide Renge Of Properties</h3>
+                <p>
+                    With over 1 million+ homes for sale available on the website, Trulia can match you with a house you will want to call home.
+                </p>
+            </div>
+            <div class="card-why">
+                <img src="~/assets/imgs/V3.png" alt="card-why" />
+                <h3>Financing Made Easy</h3>
+                <p>
+                    With over 1 million+ homes for sale available on the website, Trulia can match you with a house you will want to call home.
+                </p>
+            </div>
+            <div class="card-why">
+                <img src="~/assets/imgs/V4.png" alt="card-why" />
+                <h3>See Neighborhoods</h3>
+                <p>
+                    With over 1 million+ homes for sale available on the website, Trulia can match you with a house you will want to call home.
+                </p>
+            </div>
+      </div>
+  </div>
+  @*this page for category homes*@
+    <div class="category">
+        <h1 class="text-center">Category</h1>
+         <div class="text-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
+    </div>
+
+    @*this page for recent rent houses*@
+    <div class="recent-properties">
+        <h1 class="text-center">Recent Properties for Rent</h1>
+        <div class="text-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
+    </div>
+</section>
 
 
 
