@@ -11,8 +11,9 @@
 
     @if (!string.IsNullOrEmpty(Model.Input.ProfilePicture))
     {
-        <div class="col-md-4">
-            <img src="/uploads/@Model.Input.ProfilePicture" style="width: 250px; height: 300px" />
+        <div class="col-md-4" id="img-container">
+            <img id="actual-img" src="/uploads/@Model.Input.ProfilePicture" style="width: 250px; height: 300px" />
+            <button onclick="OnDelete()" class="btn btn-danger mt-2 w-75">Delete</button>
         </div>
     }
 
@@ -58,3 +59,9 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+<script>
+    let actualImg = document.getElementById("actual-img");
+    function OnDelete(){
+        actualImg.style.display = "none";
+    }
+</script>

@@ -4,6 +4,7 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Houzing.Data;
@@ -11,6 +12,7 @@ using Houzing.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Houzing.Areas.Identity.Pages.Account.Manage
 {
@@ -151,11 +153,24 @@ namespace Houzing.Areas.Identity.Pages.Account.Manage
                     var deleteUser = _fileService.DeleteImage(oldImage);
                 }
             }
-
-
-
+            
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
+            return RedirectToPage();
+        }
+        [HttpPost]
+        public async Task<IActionResult> OnDelete()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (Input.ImageFile != null)
+            {
+                var result = _fileService.SaveImage(Input.ImageFile);
+                if (result.Item1 == 1)
+                {
+                    var oldImage = user.ProfilePicture;
+                    var deleteUser = _fileService.DeleteImage(oldImage);
+                }
+            }
             return RedirectToPage();
         }
     }

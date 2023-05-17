@@ -1,7 +1,31 @@
-﻿@{
+﻿@*@model IEnumerable<Apartment>
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="carousel">
-    <h1>Salom Properties</h1>
-</div>
+<table class="table table-bordered table-hover table-responsive" border="1">
+    <tr>
+        <th>Adress</th>
+        <th>Country</th>
+        <th>Region</th>
+        <th>City</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr asp-controller="Home" asp-action="HouseItem" asp-route-userId="@user.HouseItemId" >
+            <td>@user.Adress</td>
+            <td>@user.Country</td>
+            <td>@user.Region</td>
+            <td>
+                <a class="btn btn-primary" asp-controller="Home" asp-action="HouseItem" asp-route-userId="@user.HouseItemId">Manage Roles</a>
+            </td>
+        </tr>
+    }
+</table>
+*@
+
+@*<td>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="HouseItem" asp-route-userId="@user.HouseItemId">Manage Roles</a>
+</td>*@
