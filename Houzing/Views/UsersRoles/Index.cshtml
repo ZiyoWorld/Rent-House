@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Houzing.Data.UserRolesViewModel>
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewBag.Title = "List Users";
@@ -33,6 +34,14 @@
                 <form asp-action="Delete" asp-route-id="@user.UserId" method="post">
                     <button class="btn btn-danger">Delete</button>
                 </form>
+                @if (ViewData["Message"] != null)
+                {
+                    <script type="text/javascript">
+                        window.onload = function () {
+                            alert("@ViewData["Message"]");
+                        };
+                    </script>
+                }
             </td>
         </tr>
     }

@@ -59,8 +59,14 @@ namespace Houzing.Controllers
             var rol = await _roleManager.FindByIdAsync(Id);
             if (rol != null)
             {
+                ViewData["Message"] = "Customer record deleted.";
                 IdentityResult result = await _roleManager.DeleteAsync(rol);
             }
+            else
+            {
+                ViewData["Message"] = "Customer not found.";
+            }
+
             return RedirectToAction("AddRole");
         }
 
@@ -126,7 +132,12 @@ namespace Houzing.Controllers
             var user = await _userManager.FindByIdAsync(id);
             if (user != null)
             {
+                ViewData["Message"] = "Customer record deleted.";
                 IdentityResult result = await _userManager.DeleteAsync(user);
+            }
+            else
+            {
+                ViewData["Message"] = "Customer not found.";
             }
             return RedirectToAction("Index");
         }

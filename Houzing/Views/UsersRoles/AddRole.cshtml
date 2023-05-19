@@ -1,4 +1,5 @@
 ﻿@model List<Microsoft.AspNetCore.Identity.IdentityRole>
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Role Manager";
     Layout = "~/Views/UsersRoles/_RolesLayout.cshtml";
@@ -29,6 +30,14 @@
                     <form asp-controller="UsersRoles" asp-action="DeleteRole" asp-route-id="@role.Id" method="post">
                         <button class="btn btn-danger">Delete</button>
                     </form>
+                    @if (ViewData["Message"] != null)
+                    {
+                        <script type="text/javascript">
+                            window.onload = function () {
+                                alert("@ViewData["Message"]");
+                            };
+                        </script>
+                    }
                 </td>
             </tr>
         }

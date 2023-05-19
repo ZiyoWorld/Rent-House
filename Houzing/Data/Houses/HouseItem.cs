@@ -20,5 +20,6 @@
         public string? Img2 { get; set; }
         public string? Img3 { get; set; }
         public string? Category { get; set; }
+
     }
 }

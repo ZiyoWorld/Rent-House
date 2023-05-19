@@ -1,6 +1,6 @@
 ﻿namespace Houzing.Data.Houses
 {
-    public class ApartmentWeb
+    public class Apartment
     {
         public int? Id { get; set; }
         public string? Adress { get; set; }

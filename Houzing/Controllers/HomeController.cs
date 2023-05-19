@@ -23,24 +23,6 @@ namespace Houzing.Controllers
             return View();
         }
 
-        public IActionResult Properties()
-        {
-            return View();
-        }
-
-        public IActionResult HouseItem()
-        {
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            return View();
-        }
-
-
-
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

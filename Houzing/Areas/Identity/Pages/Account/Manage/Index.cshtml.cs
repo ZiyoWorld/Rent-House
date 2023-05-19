@@ -87,7 +87,7 @@ namespace Houzing.Areas.Identity.Pages.Account.Manage
             {
                 PhoneNumber = phoneNumber,
                 FirstName = user.FirstName,
-                LastName = user.LastName, 
+                LastName = user.LastName,
                 ProfilePicture = user.ProfilePicture,
             };
         }
@@ -142,10 +142,10 @@ namespace Houzing.Areas.Identity.Pages.Account.Manage
 
             // code for Image upload
 
-            if(Input.ImageFile != null)
+            if (Input.ImageFile != null)
             {
                 var result = _fileService.SaveImage(Input.ImageFile);
-                if(result.Item1 == 1)
+                if (result.Item1 == 1)
                 {
                     var oldImage = user.ProfilePicture;
                     user.ProfilePicture = result.Item2;
@@ -153,25 +153,31 @@ namespace Houzing.Areas.Identity.Pages.Account.Manage
                     var deleteUser = _fileService.DeleteImage(oldImage);
                 }
             }
-            
+            // code for Image Delete
+
+
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();
         }
-        [HttpPost]
-        public async Task<IActionResult> OnDelete()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (Input.ImageFile != null)
-            {
-                var result = _fileService.SaveImage(Input.ImageFile);
-                if (result.Item1 == 1)
-                {
-                    var oldImage = user.ProfilePicture;
-                    var deleteUser = _fileService.DeleteImage(oldImage);
-                }
-            }
-            return RedirectToPage();
-        }
+        
+        //public async Task<IActionResult> DeleteImage(int id)
+        //{
+        //    var user = await _userManager.GetUserAsync(User);
+        //    if (user == null)
+        //    {
+        //        return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+        //    }
+
+        //    if (result.Item1 == 1)
+        //    {
+        //        var oldImage = user.ProfilePicture;
+        //        user.ProfilePicture = result.Item2;
+        //        await _userManager.UpdateAsync(user);
+        //        var deleteUser = _fileService.DeleteImage(oldImage);
+        //    }
+
+        //    return RedirectToAction("Index");
+        //}
     }
 }
