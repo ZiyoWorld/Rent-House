@@ -20,10 +20,14 @@
                 <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Manage Account</a>
             </li>
             <li>
+                <a class="nav-link text-dark" href="/MyHouses/Index"  title="MyProperties">My Properties</a>
+            </li>
+            <li>
                 <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                     <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
                 </form>
             </li>
+
         </ul>
     </div>
 }

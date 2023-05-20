@@ -71,8 +71,13 @@ nav {
     padding-left: 20px;
 }
 
+/*OwnerList */
+.ownerCreatepage{
+    width: 100%;
+    max-width: 900px;
+}
 /*list pages*/
-.list-page{
+.list-page {
     padding: 30px;
     font-size: 16px;
 }

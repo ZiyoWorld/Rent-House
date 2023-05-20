@@ -1,5 +1,8 @@
 ﻿using Houzing.Data;
+using Houzing.Data.Houses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Houzing.Controllers
 {
@@ -16,8 +19,6 @@ namespace Houzing.Controllers
         {
             return View();
         }
-
-
 
 
     }

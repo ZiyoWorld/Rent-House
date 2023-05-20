@@ -1,0 +1,63 @@
+﻿@model Houzing.Data.Houses.Owner
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+   
+<div class="w-100 mt-3 ownerCreatepage" >
+    <h3 class="text-dark text-center">Purchase form</h3> @*Форма оформления покупки*@
+    <p class="text-dark w-100 text-center px-2">To complete the purchase, fill in the following fields:</p> @*Для оформления покупки заполните следующие поля:*@
+    <hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="CreateOwner">
+             <input type="hidden" value="@ViewBag.OwnerId" name="OwnerId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateBirthday" class="control-label"></label>
+                <input asp-for="DateBirthday" type="date" class="form-control" />
+                <span asp-validation-for="DateBirthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Citizenship" class="control-label"></label>
+                <input asp-for="Citizenship" class="form-control" />
+                <span asp-validation-for="Citizenship" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PasportNumber" class="control-label"></label>
+                <input asp-for="PasportNumber" class="form-control" />
+                <span asp-validation-for="PasportNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h2>Hello Owner!</h2>
+        <p></p>
+    </div>
+</div>
+</div>

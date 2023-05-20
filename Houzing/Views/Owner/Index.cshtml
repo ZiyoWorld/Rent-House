@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Houzing.Data.Houses.Owner>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<table border="1" class="table table-hover mt-5 w-100">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>Email</td>
+            <td>Citizienships</td>
+            <td>DateBithday</td>
+            <td>PasportNumber</td>
+            <td>PhoneNumber</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+                <td>@user.Citizenship</td>
+                <td>@user.PasportNumber</td>
+                <td>@user.DateBirthday</td>
+                <td>@user.PhoneNumber</td>
+                <td>
+                    <form asp-controller="Owner" asp-action="Delete" method="post" asp-route-id="@user.Id">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
