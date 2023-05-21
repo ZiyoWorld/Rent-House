@@ -39,8 +39,9 @@ namespace Houzing.Controllers
             }
             return NotFound();
         }
-        // Create page are only changed by User
-        [Authorize(Roles = "User")]
+        // Create page is all memebers
+
+        [Authorize(Roles="User")]
         public IActionResult CreateOwner()
         {
             //if (id == null) return RedirectToAction("Index");
@@ -53,22 +54,31 @@ namespace Houzing.Controllers
             _context.Owners.Add(owner);
             // сохраняем в бд все изменения
             _context.SaveChanges();
-            return RedirectToAction("HouseItem/CreateHouseItems");
+            return RedirectToAction("CreateHouseItems", "HouseValue");
         }
-        // Edit page are only used User
-        [Authorize(Roles="User")]
+        // EditPage page is all memebers
+        [Authorize(Roles = "User")]
         [HttpGet]
-        public IActionResult EditOwner()
+        public IActionResult EditOwner(int? Id)
         {
-            return View("EditOwner");
+            if (Id != null)
+            {
+                Owner s = _context.Owners.Find((int)Id);
+                if (s != null)
+                {
+                    ViewBag.Owners = s;
+                }
+                else return RedirectToAction("EditOwner");
+            }
+            else return RedirectToAction("EditOwner");
+            return View();
         }
         [HttpPost]
         public IActionResult Edit(Owner owner)
         {
             _context.Entry(owner).State = EntityState.Modified;
             _context.SaveChanges();
-            return RedirectToAction("HouseItem/CreateHouseItems");
+            return RedirectToAction("EditHouseValue", "HouseValue");
         }
-
     }
 }

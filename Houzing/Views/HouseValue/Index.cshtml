@@ -1,0 +1,139 @@
+﻿@model IEnumerable<Houzing.Data.Houses.HouseItem>
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-auto-layout">
+
+
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Garage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearBuilt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Garden)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balcony)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Garage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearBuilt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Garden)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balcony)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Img1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Img2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Img3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                <a asp-action="EditHouseValue" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="DetailsHouseValue" asp-route-id="@item.Id">Details</a>
+            </td>
+                    <td>
+                        <form asp-controller="HouseValue" asp-action="DeleteHouseValue" method="post" asp-route-id="@item.Id">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                        </form>
+                        
+                    </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+</div>

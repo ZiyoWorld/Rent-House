@@ -16,6 +16,7 @@
             <td>DateBithday</td>
             <td>PasportNumber</td>
             <td>PhoneNumber</td>
+            <td>Edit</td>
             <td>Delete</td>
         </tr>
     </thead>
@@ -28,9 +29,12 @@
                 <td>@user.LastName</td>
                 <td>@user.Email</td>
                 <td>@user.Citizenship</td>
-                <td>@user.PasportNumber</td>
                 <td>@user.DateBirthday</td>
+                <td>@user.PasportNumber</td>
                 <td>@user.PhoneNumber</td>
+                <td>
+                    <a asp-route-id="@user.Id" asp-action="EditOwner" class="btn btn-success">Edit</a>
+                </td>
                 <td>
                     <form asp-controller="Owner" asp-action="Delete" method="post" asp-route-id="@user.Id">
                         <input type="submit" value="Delete" class="btn btn-danger" />

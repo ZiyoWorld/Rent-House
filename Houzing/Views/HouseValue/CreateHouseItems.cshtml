@@ -1,0 +1,167 @@
+﻿@model Houzing.Data.Houses.HouseItem
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1>HouseItems</h1>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="CreateHouseItems" asp-controller="HouseValue">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mt-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-floating mt-2">
+                <textarea asp-for="Description" class="form-control" placeholder="Leave a comment here" style="height: 150px;"></textarea>
+                <label asp-for="Description">Comments</label>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-2">
+                    <div class="form-group">
+                        <label asp-for="Room" class="control-label"></label>
+                        <input asp-for="Room" type="number" class="form-control" />
+                        <span asp-validation-for="Room" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label asp-for="Bath" class="control-label"></label>
+                        <input asp-for="Bath" type="number" class="form-control" />
+                        <span asp-validation-for="Bath" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label asp-for="Garage" class="control-label"></label>
+                        <input asp-for="Garage" type="number" class="form-control" />
+                        <span asp-validation-for="Garage" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label asp-for="Area" class="control-label"></label>
+                        <input type="number" asp-for="Area" class="form-control" />
+                        <span asp-validation-for="Area" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label asp-for="YearBuilt" class="control-label"></label>
+                        <input type="number" asp-for="YearBuilt" class="form-control" />
+                        <span asp-validation-for="YearBuilt" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input type="number" asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-2">
+                    <select asp-for="Parking" class="form-select" aria-label="Default select example">
+                        <option selected>Is there parking?</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <select asp-for="Garden" class="form-select" >
+                        <option selected>Is there Garden?</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <select asp-for="Balcony" class="form-select">
+                        <option selected>Is there Balcony?</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <select asp-for="Location" class="form-select">
+                        <option selected>Is there Location?</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" name="SalePrice" type="checkbox">
+                        <label class="form-check-label" asp-for="SalePrice">
+                            Sale Price
+                        </label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <select asp-for="Category" class="form-select">
+                        <option selected>Category?</option>
+                        <option value="House">House</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Apartment">Apartment</option>
+                    </select>
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                <label asp-for="Parking" class="control-label"></label>
+                <input asp-for="Parking" class="form-control" />
+                <span asp-validation-for="Parking" class="text-danger"></span>
+            </div>*@
+            @*<div class="form-group">
+                <label asp-for="Garden" class="control-label"></label>
+                <input asp-for="Garden" class="form-control" />
+                <span asp-validation-for="Garden" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Balcony" class="control-label"></label>
+                <input asp-for="Balcony" class="form-control" />
+                <span asp-validation-for="Balcony" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalePrice" class="control-label"></label>
+                <input asp-for="SalePrice" class="form-control" />
+                <span asp-validation-for="SalePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Img1" class="control-label"></label>
+                <input asp-for="Img1" class="form-control" />
+                <span asp-validation-for="Img1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img2" class="control-label"></label>
+                <input asp-for="Img2" class="form-control" />
+                <span asp-validation-for="Img2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img3" class="control-label"></label>
+                <input asp-for="Img3" class="form-control" />
+                <span asp-validation-for="Img3" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
