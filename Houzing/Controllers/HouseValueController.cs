@@ -1,5 +1,6 @@
 ﻿using Houzing.Data;
 using Houzing.Data.Houses;
+using Houzing.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,7 @@ namespace Houzing.Controllers
         public HouseValueController(ApplicationDbContext context)
         {
             _context = context;
+            
         }
         [Authorize(Roles = "Admin, Employer")]
         // GET: HouseItemsController
@@ -30,7 +32,7 @@ namespace Houzing.Controllers
             return View();
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         // GET: HouseItemsController/Create
         public ActionResult CreateHouseItems()
         {
@@ -44,20 +46,31 @@ namespace Houzing.Controllers
             _context.HouseItems.Add(houseItem);
             // сохраняем в бд все изменения
             _context.SaveChanges();
-            return RedirectToAction("Apartment/CreateApartments");
+            return RedirectToAction("CreateApartments", "Apartment");
         }
-        [Authorize]
+        [Authorize(Roles = "User")]
         // GET: HouseItemsController/Edit/5
-        public IActionResult EditHouseValue()
+        public IActionResult EditHouseValue(int? Id)
         {
-            return View("EditHouseValue");
+            if (Id != null)
+            {
+                Owner s = _context.Owners.Find((int)Id);
+                if (s != null)
+                {
+                    ViewBag.Houses = s;
+                }
+                else return RedirectToAction("EditHouseValue");
+            }
+            else return RedirectToAction("EditHouseValue");
+            return View();
+
         }
         [HttpPost]
         public IActionResult EditHouseValue(HouseItem houseItem)
         {
             _context.Entry(houseItem).State = EntityState.Modified;
             _context.SaveChanges();
-            return RedirectToAction("Apartment/CreateApartment");
+            return RedirectToAction("EditApartments", "Apartment");
         }
         // POST: HouseItemsController/Delete/5
         [Authorize(Roles = "Admin, Employer")]

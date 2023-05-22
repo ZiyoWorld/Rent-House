@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Houzing.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230519210303_InitialMigrations")]
-    partial class InitialMigrations
+    [Migration("20230522015806_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -140,10 +140,14 @@ namespace Houzing.Migrations
                     b.Property<string>("Repair")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("Status")
-                        .HasColumnType("bit");
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("HouseItemId");
+
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Apartments");
                 });
@@ -159,8 +163,8 @@ namespace Houzing.Migrations
                     b.Property<string>("Area")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("Balcony")
-                        .HasColumnType("bit");
+                    b.Property<string>("Balcony")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Bath")
                         .HasColumnType("nvarchar(max)");
@@ -174,8 +178,8 @@ namespace Houzing.Migrations
                     b.Property<string>("Garage")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("Garden")
-                        .HasColumnType("bit");
+                    b.Property<string>("Garden")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Img1")
                         .HasColumnType("nvarchar(max)");
@@ -186,14 +190,14 @@ namespace Houzing.Migrations
                     b.Property<string>("Img3")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("Location")
-                        .HasColumnType("bit");
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("Parking")
-                        .HasColumnType("bit");
+                    b.Property<string>("Parking")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Price")
                         .HasColumnType("nvarchar(max)");
@@ -201,8 +205,8 @@ namespace Houzing.Migrations
                     b.Property<string>("Room")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("SalePrice")
-                        .HasColumnType("bit");
+                    b.Property<string>("SalePrice")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("YearBuilt")
                         .HasColumnType("nvarchar(max)");
@@ -377,6 +381,21 @@ namespace Houzing.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Houzing.Data.Houses.Apartment", b =>
+                {
+                    b.HasOne("Houzing.Data.Houses.HouseItem", "HouseItem")
+                        .WithMany()
+                        .HasForeignKey("HouseItemId");
+
+                    b.HasOne("Houzing.Data.Houses.Owner", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+
+                    b.Navigation("HouseItem");
+
+                    b.Navigation("Owner");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

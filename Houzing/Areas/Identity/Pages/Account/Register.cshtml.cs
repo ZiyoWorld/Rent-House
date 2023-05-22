@@ -16,7 +16,7 @@ using Houzing.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.RazorPages;      
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using Houzing.Constants;
@@ -135,8 +135,8 @@ namespace Houzing.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     //await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
-                    //await _userManager.AddToRoleAsync(user, Roles.Employer.ToString());
-                  await _userManager.AddToRoleAsync(user, Roles.User.ToString());
+                    await _userManager.AddToRoleAsync(user, Roles.Employer.ToString());
+                  //await _userManager.AddToRoleAsync(user, Roles.User.ToString());
 
                     _logger.LogInformation("User created a new account with password.");
 

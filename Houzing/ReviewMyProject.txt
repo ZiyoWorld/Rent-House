@@ -21,3 +21,7 @@
 --- carousel 
 --- all carousel
 --- database of houses
+// =========== 6 day ========== 21.05.2023 
+--- owner page only created new house and new apartment
+--- 
+

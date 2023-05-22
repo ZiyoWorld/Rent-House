@@ -1,4 +1,6 @@
-﻿namespace Houzing.Data.Houses
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Houzing.Data.Houses
 {
     public class Apartment
     {
@@ -12,8 +14,12 @@
         public string? PhoneNumber { get; set; }
         public string? Repair { get; set; }
         public string? MaxPrice { get; set; }
-        public bool? Status { get; set; }
+        public string? Status { get; set; }
         public int? HouseItemId { get; set; }
+        [ForeignKey("HouseItemId")]
+        public HouseItem? HouseItem { get; set; }
         public int? OwnerId { get; set; }
+        [ForeignKey("OwnerId")]
+        public Owner? Owner { get; set; }
     }
 }

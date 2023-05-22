@@ -6,35 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Houzing.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigrations : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Apartments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Region = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NumberHouse = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Floor = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Repair = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MaxPrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<bool>(type: "bit", nullable: true),
-                    HouseItemId = table.Column<int>(type: "int", nullable: true),
-                    OwnerId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Apartments", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -91,11 +67,11 @@ namespace Houzing.Migrations
                     Area = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     YearBuilt = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Parking = table.Column<bool>(type: "bit", nullable: true),
-                    Garden = table.Column<bool>(type: "bit", nullable: true),
-                    Balcony = table.Column<bool>(type: "bit", nullable: true),
-                    SalePrice = table.Column<bool>(type: "bit", nullable: true),
-                    Location = table.Column<bool>(type: "bit", nullable: true),
+                    Parking = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Garden = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Balcony = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SalePrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Img1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Img2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Img3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -230,6 +206,50 @@ namespace Houzing.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Apartments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Region = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NumberHouse = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Floor = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Repair = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MaxPrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HouseItemId = table.Column<int>(type: "int", nullable: true),
+                    OwnerId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Apartments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Apartments_HouseItems_HouseItemId",
+                        column: x => x.HouseItemId,
+                        principalTable: "HouseItems",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Apartments_Owners_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "Owners",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Apartments_HouseItemId",
+                table: "Apartments",
+                column: "HouseItemId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Apartments_OwnerId",
+                table: "Apartments",
+                column: "OwnerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

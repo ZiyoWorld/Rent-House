@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vY6IL4X/EflkRUVg+o5bB8hRr2rZeIFndCH37BkQIg4=",
+  "Hash": "By/IBKUo8nLY19xX9UolQvTDhTixzXt54vV8CtPEsVg=",
   "Source": "Houzing",
   "BasePath": "_content/Houzing",
   "Mode": "Default",
@@ -1324,6 +1324,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\345fdbfd-caf8-422a-8b55-c91902bd6214.jpg"
+    },
+    {
+      "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\Uploads\\4e41b0cf-0187-4aec-b473-f8793782be89.jpg",
+      "SourceId": "Houzing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\",
+      "BasePath": "_content/Houzing",
+      "RelativePath": "Uploads/4e41b0cf-0187-4aec-b473-f8793782be89.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\4e41b0cf-0187-4aec-b473-f8793782be89.jpg"
     },
     {
       "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\Uploads\\92025a79-ebb4-4e74-927b-eb37d33e10f9.jpg",

@@ -11,15 +11,12 @@
         public string? Area { get; set; }
         public string? YearBuilt { get; set; }
         public string? Price { get; set; }
-        public bool? Parking { get; set; }
-        public bool? Garden { get; set; }
-        public bool? Balcony { get; set; }
-        public bool? SalePrice { get; set; }
-        public bool? Location { get; set; }
-        public string? Img1 { get; set; }
-        public string? Img2 { get; set; }
-        public string? Img3 { get; set; }
+        public string? Parking { get; set; }
+        public string? Garden { get; set; }
+        public string? Balcony { get; set; }
+        public string? SalePrice { get; set; }
+        public string? Location { get; set; }
+        public ICollection<HouseImg>? HouseImg { get; set; }
         public string? Category { get; set; }
-
     }
 }
