@@ -44,17 +44,25 @@ namespace Houzing.Controllers
         [Authorize(Roles="User")]
         public IActionResult CreateOwner()
         {
-            //if (id == null) return RedirectToAction("Index");
-            //ViewBag.OwnerId = id;
+        //    if (id == null) return RedirectToAction("Index");
+        //    ViewBag.OwnerId = id;
             return View();
         }
         [HttpPost]
         public IActionResult CreateOwner(Owner owner)
         {
-            _context.Owners.Add(owner);
-            // сохраняем в бд все изменения
-            _context.SaveChanges();
-            return RedirectToAction("CreateHouseItems", "HouseValue");
+            if(owner != null)
+            {
+                _context.Owners.Add(owner);
+                // сохраняем в бд все изменения
+                _context.SaveChanges();
+                return RedirectToAction("CreateHouseItems", "HouseValue");
+            }
+            else
+            {
+                return RedirectToAction("CreateOwner");
+            }
+            
         }
         // EditPage page is all memebers
         [Authorize(Roles = "User")]

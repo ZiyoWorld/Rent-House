@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\assets\icons\" />
+    <Folder Include="wwwroot\photos\cover\" />
+    <Folder Include="wwwroot\photos\gallery\" />
     <Folder Include="wwwroot\Uploads\" />
   </ItemGroup>
 

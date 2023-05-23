@@ -17,7 +17,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
+                <input asp-for="FirstName" required class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -27,27 +27,27 @@
             </div>
             <div class="form-group">
                 <label asp-for="DateBirthday" class="control-label"></label>
-                <input asp-for="DateBirthday" type="date" class="form-control" />
+                <input asp-for="DateBirthday" required type="date" class="form-control" />
                 <span asp-validation-for="DateBirthday" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Citizenship" class="control-label"></label>
-                <input asp-for="Citizenship" class="form-control" />
+                <input asp-for="Citizenship" required class="form-control" />
                 <span asp-validation-for="Citizenship" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" required class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PasportNumber" class="control-label"></label>
-                <input asp-for="PasportNumber" class="form-control" />
+                <input asp-for="PasportNumber" required class="form-control" />
                 <span asp-validation-for="PasportNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
+                <input asp-for="PhoneNumber" required class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group mt-2">

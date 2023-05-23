@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Houzing.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class First : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -51,35 +51,6 @@ namespace Houzing.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "HouseItems",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Room = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Bath = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Garage = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Area = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    YearBuilt = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Parking = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Garden = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Balcony = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SalePrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Img1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Img2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Img3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Category = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HouseItems", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -208,6 +179,38 @@ namespace Houzing.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "HouseItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Room = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Bath = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Garage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Area = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    YearBuilt = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Parking = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Garden = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Balcony = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SalePrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OwnerId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HouseItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_HouseItems_Owners_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "Owners",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Apartments",
                 columns: table => new
                 {
@@ -238,6 +241,25 @@ namespace Houzing.Migrations
                         name: "FK_Apartments_Owners_OwnerId",
                         column: x => x.OwnerId,
                         principalTable: "Owners",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HouseImgs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HouseItemId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HouseImgs", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_HouseImgs_HouseItems_HouseItemId",
+                        column: x => x.HouseItemId,
+                        principalTable: "HouseItems",
                         principalColumn: "Id");
                 });
 
@@ -289,6 +311,16 @@ namespace Houzing.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HouseImgs_HouseItemId",
+                table: "HouseImgs",
+                column: "HouseItemId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HouseItems_OwnerId",
+                table: "HouseItems",
+                column: "OwnerId");
         }
 
         /// <inheritdoc />
@@ -313,16 +345,19 @@ namespace Houzing.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "HouseItems");
-
-            migrationBuilder.DropTable(
-                name: "Owners");
+                name: "HouseImgs");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "HouseItems");
+
+            migrationBuilder.DropTable(
+                name: "Owners");
         }
     }
 }

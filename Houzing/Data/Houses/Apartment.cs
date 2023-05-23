@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Houzing.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Houzing.Data.Houses
 {

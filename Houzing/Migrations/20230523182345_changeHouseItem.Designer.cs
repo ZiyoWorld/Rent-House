@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Houzing.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230522015806_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230523182345_changeHouseItem")]
+    partial class changeHouseItem
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -181,13 +181,7 @@ namespace Houzing.Migrations
                     b.Property<string>("Garden")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Img1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Img2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Img3")
+                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")
@@ -195,6 +189,9 @@ namespace Houzing.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OwnerId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Parking")
                         .HasColumnType("nvarchar(max)");
@@ -212,6 +209,8 @@ namespace Houzing.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("HouseItems");
                 });
@@ -394,6 +393,15 @@ namespace Houzing.Migrations
                         .HasForeignKey("OwnerId");
 
                     b.Navigation("HouseItem");
+
+                    b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("Houzing.Data.Houses.HouseItem", b =>
+                {
+                    b.HasOne("Houzing.Data.Houses.Owner", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
 
                     b.Navigation("Owner");
                 });

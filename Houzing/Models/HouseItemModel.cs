@@ -1,9 +1,8 @@
-﻿using Houzing.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using Houzing.Data.Houses;
 
-namespace Houzing.Data.Houses
+namespace Houzing.Models
 {
-    public class HouseItem
+    public class HouseItemModel
     {
         public int? Id { get; set; }
         public string? Name { get; set; }
@@ -23,5 +22,6 @@ namespace Houzing.Data.Houses
         public int? OwnerId { get; set; }
         public Owner? Owner { get; set; }
         public string? ImagePath { get; set; }
+        public IFormFile? ImageFile { get; set; }
     }
 }

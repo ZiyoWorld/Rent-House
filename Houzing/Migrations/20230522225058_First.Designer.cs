@@ -4,6 +4,7 @@ using Houzing.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Houzing.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230522225058_First")]
+    partial class First
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -149,6 +152,27 @@ namespace Houzing.Migrations
                     b.ToTable("Apartments");
                 });
 
+            modelBuilder.Entity("Houzing.Data.Houses.HouseImg", b =>
+                {
+                    b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+
+                    b.Property<int?>("HouseItemId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HouseItemId");
+
+                    b.ToTable("HouseImgs");
+                });
+
             modelBuilder.Entity("Houzing.Data.Houses.HouseItem", b =>
                 {
                     b.Property<int?>("Id")
@@ -176,9 +200,6 @@ namespace Houzing.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Garden")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")
@@ -394,6 +415,15 @@ namespace Houzing.Migrations
                     b.Navigation("Owner");
                 });
 
+            modelBuilder.Entity("Houzing.Data.Houses.HouseImg", b =>
+                {
+                    b.HasOne("Houzing.Data.Houses.HouseItem", "HouseItem")
+                        .WithMany("HouseImg")
+                        .HasForeignKey("HouseItemId");
+
+                    b.Navigation("HouseItem");
+                });
+
             modelBuilder.Entity("Houzing.Data.Houses.HouseItem", b =>
                 {
                     b.HasOne("Houzing.Data.Houses.Owner", "Owner")
@@ -452,6 +482,11 @@ namespace Houzing.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Houzing.Data.Houses.HouseItem", b =>
+                {
+                    b.Navigation("HouseImg");
                 });
 #pragma warning restore 612, 618
         }
