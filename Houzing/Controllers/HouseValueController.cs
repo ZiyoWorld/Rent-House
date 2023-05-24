@@ -6,8 +6,12 @@ using Houzing.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.IO;
+using TechTalk.SpecFlow.CommonModels;
 
 namespace Houzing.Controllers
 {
@@ -42,98 +46,29 @@ namespace Houzing.Controllers
 
         // POST: HouseItemsController/Create
         [HttpPost]
-        public IActionResult CreateHouseItems(HouseItemModel houseItem)
+        public IActionResult CreateHouseItems(HouseItem houseItem, IFormFile formFile)
         {
-            
-            if (houseItem != null)
+            if (!ModelState.IsValid)
             {
-                HouseItem newItem = new HouseItem()
-                {
-                    Name = houseItem.Name,
-                    Description = houseItem.Description,
-                    Room = houseItem.Room,
-                    ImagePath = UploadImage(houseItem.ImageFile),
-                    Bath = houseItem.Bath,
-                    Garage = houseItem.Garage,
-                    Area = houseItem.Area,
-                    YearBuilt = houseItem.YearBuilt,
-                    Parking = houseItem.Parking,
-                    Price = houseItem.Price,
-                    Garden = houseItem.Garden,
-                    SalePrice = houseItem.SalePrice,
-                    Balcony = houseItem.Balcony,
-                    Location = houseItem.Location,
-                    Category = houseItem.Category,
-                    OwnerId = houseItem.OwnerId,
-                };
-                _context.HouseItems.Add(newItem);
-                // сохраняем в бд все изменения
-                _context.SaveChanges();
-                return RedirectToAction("CreateApartments", "Apartment");
+                return View(houseItem);
             }
-            else
+            if (houseItem.ImageFile != null)
             {
-                return RedirectToAction("CreateOwner", "Owner");
-            }
-        }
-
-        private string UploadImage(IFormFile imageFile)
-        {
-            try
-            {
-                var wwwPath = this._environment.WebRootPath;
-                var path = Path.Combine(wwwPath, "Uploads");
-                if (!Directory.Exists(path))
+                var fileReult = _fileService.SaveImage(houseItem.ImageFile);
+                if (fileReult.Item1 == 0)
                 {
-                    Directory.CreateDirectory(path);
+                    TempData["msg"] = "File could not saved";
+                    return View(houseItem);
                 }
-                // check the alllowed exestitions
-                var ext = Path.GetExtension(imageFile.FileName);
-                var allowedExtensions = new string[] { ".jpg", ".png", ".jpeg" };
-                if (!allowedExtensions.Contains(ext))
-                {
-                    string msg = string.Format("Only {0} extencions are allowed", string.Join(",", allowedExtensions));
-                    return msg;
-                }
-                string uniqueString = Guid.NewGuid().ToString();
-                var newFileName = uniqueString + ext;
-                var fileWithPath = Path.Combine(path, newFileName);
-                var stream = new FileStream(fileWithPath, FileMode.Create);
-                imageFile.CopyTo(stream);
-                stream.Close();
-                return newFileName;
+                var imageName = fileReult.Item2;
+                houseItem.ImagePath = imageName;
             }
-            catch (Exception ex)
-            {
-                return "hass been accured";
-            }
+            _context.HouseItems.Add(houseItem);
+            _context.SaveChanges();
+            //    // сохраняем в бд все изменения
+            return RedirectToAction("CreateApartments", "Apartment");
         }
-        //private string UploadFile(IFormFile file)
-        //{
-        //    string fileName = null;
-        //    if (file != null)
-        //    {
-        //        string uploadDir = Path.Combine(_environment.WebRootPath, "Uploads");
-        //        fileName = Guid.NewGuid().ToString() + "_" + file.FileName;
-        //        string filePath = Path.Combine(uploadDir, fileName);
-        //        using (var fileStream = new FileStream(filePath, FileMode.Create))
-        //        {
-        //            file.CopyTo(fileStream);
-        //        }
-        //    }
-        //    return fileName;
-        //string serverFolder = Path.Combine(_environment.WebRootPath, folderPath);
-        //folderPath += Guid.NewGuid().ToString() + "_" + file.FileName;
-
-        ////file.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
-        //using (var fileStream = new FileStream(serverFolder, FileMode.Create))
-        //{
-        //    file.CopyTo(fileStream);
-        //}
-
-        //return "/" + folderPath;
-        //}
-
+        
 
         [Authorize(Roles = "User")]
 

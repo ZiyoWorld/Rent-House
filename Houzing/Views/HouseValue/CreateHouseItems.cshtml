@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="CreateHouseItems" asp-controller="HouseValue">
+        <form asp-action="CreateHouseItems" enctype="multipart/form-data" method="post" asp-controller="HouseValue">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group mt-3">
                 <label asp-for="Name" class="control-label"></label>
