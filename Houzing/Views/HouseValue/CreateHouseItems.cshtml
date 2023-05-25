@@ -1,4 +1,4 @@
-﻿@model Houzing.Data.Houses.HouseItem
+﻿@model Houzing.Models.HouseItemModel
 
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
@@ -70,36 +70,36 @@
                 <div class="col-2">
                     <select asp-for="Parking" class="form-select" aria-label="Default select example">
                         <option selected>Is there parking?</option>
-                        <option value="1">True</option>
-                        <option value="0">False</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="col-2">
                     <select asp-for="Garden" class="form-select" >
                         <option selected>Is there Garden?</option>
-                        <option value="1">True</option>
-                        <option value="0">False</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="col-2">
                     <select asp-for="Balcony" class="form-select">
                         <option selected>Is there Balcony?</option>
-                        <option value="1">True</option>
-                        <option value="0">False</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="col-2">
                     <select asp-for="Location" class="form-select">
                         <option selected>Is there Location?</option>
-                        <option value="1">True</option>
-                        <option value="0">False</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">Yes</option>
                     </select>
                 </div>
                 <div class="col-2">
                     <select asp-for="SalePrice" class="form-select">
                         <option selected>Is there Location?</option>
-                        <option value="1">True</option>
-                        <option value="0">False</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="col-2">
@@ -111,41 +111,28 @@
                     </select>
                 </div>
             </div>
-
-            @*<div class="form-group">
-                <label asp-for="Parking" class="control-label"></label>
-                <input asp-for="Parking" class="form-control" />
-                <span asp-validation-for="Parking" class="text-danger"></span>
-            </div>*@
-            @*<div class="form-group">
-                <label asp-for="Garden" class="control-label"></label>
-                <input asp-for="Garden" class="form-control" />
-                <span asp-validation-for="Garden" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Balcony" class="control-label"></label>
-                <input asp-for="Balcony" class="form-control" />
-                <span asp-validation-for="Balcony" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SalePrice" class="control-label"></label>
-                <input asp-for="SalePrice" class="form-control" />
-                <span asp-validation-for="SalePrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Location" class="control-label"></label>
-                <input asp-for="Location" class="form-control" />
-                <span asp-validation-for="Location" class="text-danger"></span>
-            </div>*@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="ImagePath" class="control-label"></label>
-                        <input asp-for="ImagePath" type="file" class="form-control" />
-                        <span asp-validation-for="ImagePath" class="text-danger"></span>
+                        <label asp-for="ImageFile1" class="control-label"></label>
+                        <input asp-for="ImageFile1" type="file" class="form-control" />
+                        <span asp-validation-for="ImageFile1" class="text-danger"></span>
                     </div>
                 </div>
-                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ImageFile2" class="control-label"></label>
+                        <input asp-for="ImageFile2" type="file" class="form-control" />
+                        <span asp-validation-for="ImageFile2" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ImageFile3" class="control-label"></label>
+                        <input asp-for="ImageFile3" type="file" class="form-control" />
+                        <span asp-validation-for="ImageFile3" class="text-danger"></span>
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="OwnerId" class="control-label"></label>
@@ -162,7 +149,4 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

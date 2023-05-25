@@ -1,110 +1,109 @@
-﻿@model Houzing.Data.Houses.HouseItem
+﻿@model Houzing.Models.HouseItemModel
 
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-
-<h4>HouseItem Edit</h4>
+<div>
+    <h1>HouseItems</h1>
+</div>
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="EditHouseValue">
+        <form asp-action="EditHouseItem" enctype="multipart/form-data" method="post" asp-controller="HouseValue">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" value="@ViewBag.Houses.Name" required class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-floating mt-2">
                 <textarea asp-for="Description" value="@ViewBag.Houses.Description" class="form-control" placeholder="Leave a comment here" style="height: 150px;"></textarea>
                 <label asp-for="Description">Comments</label>
             </div>
+
             <div class="row mt-3">
                 <div class="col-2">
                     <div class="form-group">
                         <label asp-for="Room" class="control-label"></label>
-                        <input asp-for="Room" value="@ViewBag.Houses.Room" class="form-control" />
+                        <input asp-for="Room" value="@ViewBag.Houses.Room" required type="number" class="form-control" />
                         <span asp-validation-for="Room" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="form-group">
                         <label asp-for="Bath" class="control-label"></label>
-                        <input asp-for="Bath" value="@ViewBag.Houses.Bath"  class="form-control" />
+                        <input asp-for="Bath" value="@ViewBag.Houses.Bath" required type="number" class="form-control" />
                         <span asp-validation-for="Bath" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="form-group">
                         <label asp-for="Garage" class="control-label"></label>
-                        <input asp-for="Garage" value="@ViewBag.Houses.Garage" class="form-control" />
+                        <input asp-for="Garage" value="@ViewBag.Houses.Garage" required type="number" class="form-control" />
                         <span asp-validation-for="Garage" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="form-group">
                         <label asp-for="Area" class="control-label"></label>
-                        <input value="@ViewBag.Houses.Area" asp-for="Area" class="form-control" />
+                        <input type="number" value="@ViewBag.Houses.Area" asp-for="Area" required class="form-control" />
                         <span asp-validation-for="Area" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="form-group">
                         <label asp-for="YearBuilt" class="control-label"></label>
-                        <input value="@ViewBag.Houses.YearBuilt" asp-for="YearBuilt" class="form-control" />
+                        <input type="number" value="@ViewBag.Houses.YearBuilt" asp-for="YearBuilt" required class="form-control" />
                         <span asp-validation-for="YearBuilt" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="form-group">
                         <label asp-for="Price" class="control-label"></label>
-                        <input type="number" asp-for="Price" class="form-control" />
+                        <input type="number" value="@ViewBag.Houses.Price" asp-for="Price" required class="form-control" />
                         <span asp-validation-for="Price" class="text-danger"></span>
                     </div>
                 </div>
             </div>
-            
-            
             <div class="row mt-3">
                 <div class="col-2">
                     <select asp-for="Parking" value="@ViewBag.Houses.Parking" class="form-select" aria-label="Default select example">
                         <option selected>Is there parking?</option>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="col-2">
                     <select asp-for="Garden" value="@ViewBag.Houses.Garden" class="form-select">
                         <option selected>Is there Garden?</option>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="col-2">
-                    <select asp-for="Balcony" value="@ViewBag.Houses.Balcony" class="form-select">
+                    <select asp-for="Balcony" class="form-select">
                         <option selected>Is there Balcony?</option>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="col-2">
-                    <select asp-for="Location" value="@ViewBag.Houses.Location" class="form-select">
+                    <select asp-for="Location" class="form-select">
                         <option selected>Is there Location?</option>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">Yes</option>
                     </select>
                 </div>
                 <div class="col-2">
-                    <select asp-for="SalePrice" value="@ViewBag.Houses.SalePrice" class="form-select">
-                        <option selected>Is there SalePrice?</option>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                    <select asp-for="SalePrice" class="form-select">
+                        <option selected>Is there Location?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="col-2">
-                    <select asp-for="Category" value="@ViewBag.Houses.Category" class="form-select">
+                    <select asp-for="Category" class="form-select">
                         <option selected>Category?</option>
                         <option value="House">House</option>
                         <option value="Villa">Villa</option>
@@ -115,16 +114,36 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="ImagePath" class="control-label"></label>
-                        <input asp-for="ImagePath" class="form-control" />
-                        <span asp-validation-for="ImagePath" class="text-danger"></span>
+                        <label asp-for="ImageFile1" class="control-label"></label>
+                        <input asp-for="ImageFile1" type="file" class="form-control" />
+                        <span asp-validation-for="ImageFile1" class="text-danger"></span>
                     </div>
                 </div>
-                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ImageFile2" class="control-label"></label>
+                        <input asp-for="ImageFile2" type="file" class="form-control" />
+                        <span asp-validation-for="ImageFile2" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ImageFile3" class="control-label"></label>
+                        <input asp-for="ImageFile3" type="file" class="form-control" />
+                        <span asp-validation-for="ImageFile3" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="OwnerId" class="control-label"></label>
+                        <input asp-for="OwnerId" value="@ViewBag.Houses.OwnerId" readonly class="form-control" />
+                        <span asp-validation-for="OwnerId" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-group">
-                <input type="submit" value="Save HouseItems" class="btn btn-primary" />
+            <div class="form-group mt-3">
+                <input type="submit" value="Next Apartments" class="btn btn-primary" />
             </div>
         </form>
     </div>

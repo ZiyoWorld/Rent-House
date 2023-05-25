@@ -86,7 +86,7 @@ namespace Houzing.Controllers
         {
             _context.Entry(owner).State = EntityState.Modified;
             _context.SaveChanges();
-            return RedirectToAction("EditHouseValue", "HouseValue");
+            return RedirectToAction("Index", "Apartment");
         }
     }
 }

@@ -6,7 +6,7 @@ using Houzing.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Http.HttpResults;    
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -46,57 +46,106 @@ namespace Houzing.Controllers
 
         // POST: HouseItemsController/Create
         [HttpPost]
-        public IActionResult CreateHouseItems(HouseItem houseItem, IFormFile formFile)
+        public async Task<IActionResult> CreateHouseItems(HouseItemModel houseItem)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(houseItem);
-            }
-            if (houseItem.ImageFile != null)
-            {
-                var fileReult = _fileService.SaveImage(houseItem.ImageFile);
-                if (fileReult.Item1 == 0)
+                string uniqueFileName1 = ProcessUploadedFile1(houseItem);
+                string uniqueFileName2 = ProcessUploadedFile2(houseItem);
+                string uniqueFileName3 = ProcessUploadedFile3(houseItem);
+                HouseItem newHouseItem = new()
                 {
-                    TempData["msg"] = "File could not saved";
-                    return View(houseItem);
-                }
-                var imageName = fileReult.Item2;
-                houseItem.ImagePath = imageName;
+                    Name = houseItem.Name,
+                    Description = houseItem.Description,
+                    Room = houseItem.Room,
+                    Garage = houseItem.Garage,
+                    Bath = houseItem.Bath,
+                    YearBuilt = houseItem.YearBuilt,
+                    Area = houseItem.Area,
+                    Parking = houseItem.Parking,
+                    Garden = houseItem.Garden,
+                    Balcony = houseItem.Balcony,
+                    SalePrice = houseItem.SalePrice,
+                    Location = houseItem.Location,
+                    OwnerId = houseItem.OwnerId,
+                    Category = houseItem.Category,
+                    ImagePath1 = uniqueFileName1,
+                    ImagePath2 = uniqueFileName2,
+                    ImagePath3 = uniqueFileName3,
+                };
+
+                
+                _context.HouseItems.Add(newHouseItem);
+                await _context.SaveChangesAsync();
+
             }
-            _context.HouseItems.Add(houseItem);
-            _context.SaveChanges();
+            
             //    // сохраняем в бд все изменения
             return RedirectToAction("CreateApartments", "Apartment");
         }
-        
+
+        private string ProcessUploadedFile1(HouseItemModel houseItem)
+        {
+            string uniqueFileName = string.Empty;
+            if (houseItem.ImageFile1 != null)
+            {
+                string uploadFolder = Path.Combine(_environment.WebRootPath, "photos\\cover");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + houseItem.ImageFile1.FileName;
+                string imageFilePath = Path.Combine(uploadFolder, uniqueFileName);
+                houseItem.ImageFile1.CopyTo(new FileStream(imageFilePath, FileMode.Create));
+            }
+            return uniqueFileName;
+        }
+        private string ProcessUploadedFile2(HouseItemModel houseItem)
+        {
+            string uniqueFileName = string.Empty;
+            if (houseItem.ImageFile2 != null)
+            {
+                string uploadFolder = Path.Combine(_environment.WebRootPath, "photos\\cover");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + houseItem.ImageFile2.FileName;
+                string imageFilePath = Path.Combine(uploadFolder, uniqueFileName);
+                houseItem.ImageFile2.CopyTo(new FileStream(imageFilePath, FileMode.Create));
+            }
+            return uniqueFileName;
+        }
+        private string ProcessUploadedFile3(HouseItemModel houseItem)
+        {
+            string uniqueFileName = string.Empty;
+            if (houseItem.ImageFile3 != null)
+            {
+                string uploadFolder = Path.Combine(_environment.WebRootPath, "photos\\cover");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + houseItem.ImageFile3.FileName;
+                string imageFilePath = Path.Combine(uploadFolder, uniqueFileName);
+                houseItem.ImageFile3.CopyTo(new FileStream(imageFilePath, FileMode.Create));
+            }
+            return uniqueFileName;
+        }
+
 
         [Authorize(Roles = "User")]
-
-
-
         // GET: HouseItemsController/Edit/5
-        public IActionResult EditHouseValue(int? Id)
+        [HttpGet]
+        public IActionResult EditHouseItem(int? Id)
         {
             if (Id != null)
             {
-                Owner s = _context.Owners.Find((int)Id);
+                HouseItem s = _context.HouseItems.Find((int)Id);
                 if (s != null)
                 {
                     ViewBag.Houses = s;
                 }
-                else return RedirectToAction("EditHouseValue");
+                else return RedirectToAction("EditHouseItem");
             }
-            else return RedirectToAction("EditHouseValue");
             return View();
-
         }
         [HttpPost]
-        public IActionResult EditHouseValue(HouseItem houseItem)
+        public IActionResult EditHouseItem(HouseItem houseItem)
         {
             _context.Entry(houseItem).State = EntityState.Modified;
             _context.SaveChanges();
-            return RedirectToAction("EditApartments", "Apartment");
+            return RedirectToAction("Index", "Apartment");
         }
+
         // POST: HouseItemsController/Delete/5
         [Authorize(Roles = "Admin, Employer")]
         [HttpPost]
@@ -109,7 +158,7 @@ namespace Houzing.Controllers
                 {
                     _context.HouseItems.Remove(userOne);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction("Properties/Index");
+                    return RedirectToAction("Index", "Owner");
                 }
             }
             return NotFound();

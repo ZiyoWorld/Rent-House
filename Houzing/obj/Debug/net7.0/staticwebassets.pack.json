@@ -285,6 +285,50 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\3603981d-355a-403b-9d2e-9fa042508d3a_photo_2021-04-23_17-23-21.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\3603981d-355a-403b-9d2e-9fa042508d3a_photo_2021-04-23_17-23-21.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\585b7455-22b8-4e4b-a2ee-831cb615720d_Mirziyod.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\585b7455-22b8-4e4b-a2ee-831cb615720d_Mirziyod.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\761dc72b-6707-4c0f-8b7b-5dbc34bb2f5e_photo_2021-04-23_17-23-21.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\761dc72b-6707-4c0f-8b7b-5dbc34bb2f5e_photo_2021-04-23_17-23-21.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\77487da5-de80-4374-879e-f24c6eb8060b_photo_2021-04-23_17-23-21.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\77487da5-de80-4374-879e-f24c6eb8060b_photo_2021-04-23_17-23-21.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\a849edae-553e-41e2-bba8-d316620cbcbb_photo_2022-06-12_19-04-28.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\a849edae-553e-41e2-bba8-d316620cbcbb_photo_2022-06-12_19-04-28.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\b3760772-ffce-4380-a2d4-42a2585017fe_photo_2022-06-16_11-51-08.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\b3760772-ffce-4380-a2d4-42a2585017fe_photo_2022-06-16_11-51-08.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\c64ecdf8-1d58-4b9f-bd63-f84234e42f40_photo_2022-07-02_07-53-08.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\c64ecdf8-1d58-4b9f-bd63-f84234e42f40_photo_2022-07-02_07-53-08.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\caf54dcf-1567-43f0-94af-ae64fad76501_Mirziyod.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\caf54dcf-1567-43f0-94af-ae64fad76501_Mirziyod.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\d61deb1f-dfdd-4689-8170-9b00f5fc58d5_photo_2022-07-02_01-30-47.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\d61deb1f-dfdd-4689-8170-9b00f5fc58d5_photo_2022-07-02_01-30-47.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\de1f9ec4-211d-4325-b868-7ea428ab87ff_photo_2021-04-23_17-23-21.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\de1f9ec4-211d-4325-b868-7ea428ab87ff_photo_2021-04-23_17-23-21.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\e2f0d4f2-d35b-4712-86ed-92be6c8d2371_Mirziyod.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\e2f0d4f2-d35b-4712-86ed-92be6c8d2371_Mirziyod.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Houzing.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

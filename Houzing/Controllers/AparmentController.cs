@@ -12,11 +12,11 @@ namespace Houzing.Controllers
         {
             _context = context;
         }
-
+        
         // GET: AparmentController
         public ActionResult Index()
         {
-            return View(_context.Apartments.ToList());
+            return View();
         }
 
         // GET: AparmentController/Details/5
@@ -26,14 +26,14 @@ namespace Houzing.Controllers
         }
 
         // GET: AparmentController/Create
-        public ActionResult CreateApartments()
+        public ActionResult CreateApartment()
         {
             return View();
         }
 
         // POST: AparmentController/Create
         [HttpPost]
-        public ActionResult CreateApartments(IFormCollection collection)
+        public ActionResult CreateApartment(IFormCollection collection)
         {
             return View();
         }

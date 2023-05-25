@@ -54,7 +54,13 @@
                 @Html.DisplayNameFor(model => model.Category)
             </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ImagePath)
+                    @Html.DisplayNameFor(model => model.ImagePath1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImagePath2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImagePath3)
                 </th>
             <th>Details</th>
             <th>Delete</th>
@@ -106,10 +112,16 @@
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
             <td>
-                        <img style='width:80px; height:60px;' src="~/Uploads/@item.ImagePath" name="Keyinroq" />
+                        <img style='width:80px; height:60px;' src="~/photos/cover/@item.ImagePath1" name="Keyinroq" />
             </td>
             <td>
-                <a asp-action="EditHouseValue" asp-route-id="@item.Id">Edit</a>
+                        <img style='width:80px; height:60px;' src="~/photos/cover/@item.ImagePath2" name="Keyinroq" />
+            </td>
+                    <td>
+                        <img style='width:80px; height:60px;' src="~/photos/cover/@item.ImagePath3" name="Keyinroq" />
+                    </td>
+            <td>
+                <a asp-action="EditHouseItems" asp-route-id="@item.Id">Edit</a>
                 <a asp-action="DetailsHouseValue" asp-route-id="@item.Id">Details</a>
             </td>
                     <td>
@@ -121,6 +133,4 @@
 }
     </tbody>
 </table>
-
-
 </div>

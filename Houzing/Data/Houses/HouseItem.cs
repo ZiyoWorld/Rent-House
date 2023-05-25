@@ -23,8 +23,9 @@ namespace Houzing.Data.Houses
         public string? Category { get; set; }
         public int? OwnerId { get; set; }
         public Owner? Owner { get; set; }
-        public string? ImagePath { get; set; }
-        [NotMapped]
-        public IFormFile? ImageFile { get; set; }
+        public string? ImagePath1 { get; set; }
+        public string? ImagePath2 { get; set; }
+        public string? ImagePath3 { get; set; }
+        
     }
 }
