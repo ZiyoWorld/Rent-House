@@ -285,8 +285,24 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\2883212a-981b-4397-9f6f-6ceb54a1d99f_images (1).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\2883212a-981b-4397-9f6f-6ceb54a1d99f_images (1).jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\2df8a7e2-e086-417c-b162-abfdb1f37816_images (5).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\2df8a7e2-e086-417c-b162-abfdb1f37816_images (5).jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\3603981d-355a-403b-9d2e-9fa042508d3a_photo_2021-04-23_17-23-21.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\3603981d-355a-403b-9d2e-9fa042508d3a_photo_2021-04-23_17-23-21.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\3d2e8e34-66ad-49ef-8f2e-9819088e9c2d_images (5).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\3d2e8e34-66ad-49ef-8f2e-9819088e9c2d_images (5).jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\420cd392-ce1f-4f1a-aecd-33cf389b56bb_images (1).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\420cd392-ce1f-4f1a-aecd-33cf389b56bb_images (1).jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\585b7455-22b8-4e4b-a2ee-831cb615720d_Mirziyod.jpg",
@@ -301,12 +317,24 @@
       "PackagePath": "staticwebassets\\photos\\cover\\77487da5-de80-4374-879e-f24c6eb8060b_photo_2021-04-23_17-23-21.jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\9d32a557-20b1-4f8d-9034-f2801eccd1ca_images (3).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\9d32a557-20b1-4f8d-9034-f2801eccd1ca_images (3).jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\a849edae-553e-41e2-bba8-d316620cbcbb_photo_2022-06-12_19-04-28.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\a849edae-553e-41e2-bba8-d316620cbcbb_photo_2022-06-12_19-04-28.jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\a8c8809e-764f-481b-a975-bed10ac0ff1f_RE_for_sale_agent.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\a8c8809e-764f-481b-a975-bed10ac0ff1f_RE_for_sale_agent.jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\b3760772-ffce-4380-a2d4-42a2585017fe_photo_2022-06-16_11-51-08.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\b3760772-ffce-4380-a2d4-42a2585017fe_photo_2022-06-16_11-51-08.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\bc0d8736-721c-43ed-8d99-0b8ab84edddf_images (3).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\bc0d8736-721c-43ed-8d99-0b8ab84edddf_images (3).jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\c64ecdf8-1d58-4b9f-bd63-f84234e42f40_photo_2022-07-02_07-53-08.jpg",
@@ -315,6 +343,10 @@
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\caf54dcf-1567-43f0-94af-ae64fad76501_Mirziyod.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\caf54dcf-1567-43f0-94af-ae64fad76501_Mirziyod.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\cfe2cbe5-ef3f-4df1-aed4-83c66cfd45c0_images (5).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\cfe2cbe5-ef3f-4df1-aed4-83c66cfd45c0_images (5).jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\d61deb1f-dfdd-4689-8170-9b00f5fc58d5_photo_2022-07-02_01-30-47.jpg",

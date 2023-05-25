@@ -72,16 +72,16 @@ namespace Houzing.Controllers
                     ImagePath1 = uniqueFileName1,
                     ImagePath2 = uniqueFileName2,
                     ImagePath3 = uniqueFileName3,
-                };
-
-                
+                };  
                 _context.HouseItems.Add(newHouseItem);
                 await _context.SaveChangesAsync();
 
             }
+            else return NotFound();
+
             
             //    // сохраняем в бд все изменения
-            return RedirectToAction("CreateApartments", "Apartment");
+            return RedirectToAction("CreateApartment", "Apartment");
         }
 
         private string ProcessUploadedFile1(HouseItemModel houseItem)

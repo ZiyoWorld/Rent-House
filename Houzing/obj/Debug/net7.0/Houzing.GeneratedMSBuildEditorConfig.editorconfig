@@ -180,8 +180,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Aparment/IndexApartment.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBhcm1lbnRcSW5kZXhBcGFydG1lbnQuY3NodG1s
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Aparment/CreateApartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBhcm1lbnRcQ3JlYXRlQXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Aparment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBhcm1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Home/Contact.cshtml]

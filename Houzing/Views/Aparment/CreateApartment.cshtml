@@ -1,0 +1,85 @@
+﻿@model Houzing.Data.Houses.Apartment
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h4>CreateAparmentVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateApartment">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Adress" class="control-label"></label>
+                <input asp-for="Adress" class="form-control" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Region" class="control-label"></label>
+                <input asp-for="Region" class="form-control" />
+                <span asp-validation-for="Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberHouse" class="control-label"></label>
+                <input asp-for="NumberHouse" class="form-control" />
+                <span asp-validation-for="NumberHouse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Floor" class="control-label"></label>
+                <input asp-for="Floor" class="form-control" />
+                <span asp-validation-for="Floor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Repair" class="control-label"></label>
+                <input asp-for="Repair" class="form-control" />
+                <span asp-validation-for="Repair" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxPrice" class="control-label"></label>
+                <input asp-for="MaxPrice" class="form-control" />
+                <span asp-validation-for="MaxPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinPrice" class="control-label"></label>
+                <input asp-for="MinPrice" class="form-control" />
+                <span asp-validation-for="MinPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HouseItemId" class="control-label"></label>
+                <select asp-for="HouseItemId" class ="form-control" asp-items="ViewBag.HouseItemId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="OwnerId" class="control-label"></label>
+                <select asp-for="OwnerId" class ="form-control" asp-items="ViewBag.OwnerId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -15,6 +15,7 @@ namespace Houzing.Data.Houses
         public string? PhoneNumber { get; set; }
         public string? Repair { get; set; }
         public string? MaxPrice { get; set; }
+        public string? MinPrice { get; set; }
         public string? Status { get; set; }
         public int? HouseItemId { get; set; }
         [ForeignKey("HouseItemId")]
