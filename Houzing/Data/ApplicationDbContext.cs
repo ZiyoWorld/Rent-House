@@ -7,15 +7,14 @@ namespace Houzing.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
+            
         }
        public DbSet<Owner> Owners { get; set; }
        public DbSet<HouseItem> HouseItems { get; set; }
        public DbSet<Apartment> Apartments { get; set; }
-       public DbSet<CreateAparmentVM> CreateAparmentVM { get; set; } = default!;
+       public DbSet<Houzing.Data.Houses.Employer> Employer { get; set; } = default!;
        //public DbSet<Image> Images { get; set; }
     }
 }

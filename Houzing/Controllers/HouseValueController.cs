@@ -81,7 +81,7 @@ namespace Houzing.Controllers
 
             
             //    // сохраняем в бд все изменения
-            return RedirectToAction("CreateApartment", "Apartment");
+            return RedirectToAction("Create", "Apartments");
         }
 
         private string ProcessUploadedFile1(HouseItemModel houseItem)

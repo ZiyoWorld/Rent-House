@@ -135,7 +135,7 @@ namespace Houzing.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     //await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
-                   // await _userManager.AddToRoleAsync(user, Roles.Employer.ToString());
+                   //await _userManager.AddToRoleAsync(user, Roles.Employer.ToString());
                   //await _userManager.AddToRoleAsync(user, Roles.User.ToString());
 
                     _logger.LogInformation("User created a new account with password.");

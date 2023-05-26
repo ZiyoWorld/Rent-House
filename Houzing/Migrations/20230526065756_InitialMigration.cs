@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Houzing.Migrations
 {
     /// <inheritdoc />
-    public partial class First : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -198,7 +198,10 @@ namespace Houzing.Migrations
                     SalePrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OwnerId = table.Column<int>(type: "int", nullable: true)
+                    OwnerId = table.Column<int>(type: "int", nullable: true),
+                    ImagePath1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImagePath2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImagePath3 = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -222,9 +225,10 @@ namespace Houzing.Migrations
                     City = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NumberHouse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Floor = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TypeHouse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Repair = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MaxPrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MinPrice = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HouseItemId = table.Column<int>(type: "int", nullable: true),
                     OwnerId = table.Column<int>(type: "int", nullable: true)
@@ -241,25 +245,6 @@ namespace Houzing.Migrations
                         name: "FK_Apartments_Owners_OwnerId",
                         column: x => x.OwnerId,
                         principalTable: "Owners",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "HouseImgs",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    HouseItemId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HouseImgs", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_HouseImgs_HouseItems_HouseItemId",
-                        column: x => x.HouseItemId,
-                        principalTable: "HouseItems",
                         principalColumn: "Id");
                 });
 
@@ -313,11 +298,6 @@ namespace Houzing.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_HouseImgs_HouseItemId",
-                table: "HouseImgs",
-                column: "HouseItemId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_HouseItems_OwnerId",
                 table: "HouseItems",
                 column: "OwnerId");
@@ -345,16 +325,13 @@ namespace Houzing.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "HouseImgs");
+                name: "HouseItems");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "HouseItems");
 
             migrationBuilder.DropTable(
                 name: "Owners");

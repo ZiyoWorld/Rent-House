@@ -1,0 +1,129 @@
+﻿@model Houzing.Data.Houses.Apartment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Apartment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Adress" class="control-label"></label>
+                        <input asp-for="Adress" class="form-control" />
+                        <span asp-validation-for="Adress" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Country" class="control-label"></label>
+                        <input asp-for="Country" class="form-control" />
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Region" class="control-label"></label>
+                        <input asp-for="Region" class="form-control" />
+                        <span asp-validation-for="Region" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="City" class="control-label"></label>
+                        <input asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="NumberHouse" class="control-label"></label>
+                        <input asp-for="NumberHouse" class="form-control" />
+                        <span asp-validation-for="NumberHouse" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Floor" class="control-label"></label>
+                        <input asp-for="Floor" class="form-control" />
+                        <span asp-validation-for="Floor" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="TypeHouse" class="control-label"></label>
+                        <select asp-for="TypeHouse" class="form-control">
+                            <option selected>Choose Type your purpose</option>
+                            <option value="Rent-House">Rent House</option>
+                            <option value="Sale-House">Sale House</option>
+                        </select>
+                        <span asp-validation-for="TypeHouse" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Repair" class="control-label"></label>
+                        <input asp-for="Repair" class="form-control" />
+                        <span asp-validation-for="Repair" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="MaxPrice" class="control-label"></label>
+                        <input asp-for="MaxPrice" class="form-control" />
+                        <span asp-validation-for="MaxPrice" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="MinPrice" class="control-label"></label>
+                        <input asp-for="MinPrice" class="form-control" />
+                        <span asp-validation-for="MinPrice" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Status" class="control-label"></label>
+                        <input asp-for="Status" class="form-control" />
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="HouseItemId" class="control-label"></label>
+                        <input asp-for="HouseItemId" class="form-control" readonly value="@ViewBag.HouseItemVm" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="OwnerId" class="control-label"></label>
+                        <input asp-for="OwnerId" class="form-control" readonly value="@ViewBag.OwnerVm" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Create" class="btn w-25 btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

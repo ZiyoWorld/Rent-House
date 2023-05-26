@@ -1,0 +1,12 @@
+﻿@model Houzing.Models.AparmentViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    @foreach (var app in Model.HouseItemsView)
+    {
+        <div>@app.Name</div>
+    }
+</div>
