@@ -1,12 +1,11 @@
 ﻿@model IEnumerable<Houzing.Data.Houses.Apartment>
-
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>ManageApartments</h1>
 
-<table class="table">
+<table class="table table-bordered table-striped" border="1">
     <thead>
         <tr>
             <th>
@@ -48,7 +47,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Owner)
             </th>
-            <th></th>
+            <th>
+                Edit
+            </th>
+            <th>Details</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -95,8 +98,12 @@
                     @Html.DisplayFor(modelItem => item.Owner.Id)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                </td>
+                <td>
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>

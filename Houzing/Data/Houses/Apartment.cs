@@ -17,11 +17,11 @@ namespace Houzing.Data.Houses
         public string? MaxPrice { get; set; }
         public string? MinPrice { get; set; }
         public string? Status { get; set; }
-        public int? HouseItemId { get; set; }
         [ForeignKey("HouseItemId")]
+        public int? HouseItemId { get; set; }
         public HouseItem? HouseItem { get; set; }
-        public int? OwnerId { get; set; }
         [ForeignKey("OwnerId")]
+        public int? OwnerId { get; set; }
         public Owner? Owner { get; set; }
     }
 }

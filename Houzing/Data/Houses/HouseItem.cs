@@ -26,6 +26,7 @@ namespace Houzing.Data.Houses
         public string? ImagePath1 { get; set; }
         public string? ImagePath2 { get; set; }
         public string? ImagePath3 { get; set; }
+        List<Apartment> Apartments { get; set; } = new List<Apartment>();
         
     }
 }

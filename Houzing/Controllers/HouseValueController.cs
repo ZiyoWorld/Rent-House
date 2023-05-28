@@ -58,30 +58,31 @@ namespace Houzing.Controllers
                     Name = houseItem.Name,
                     Description = houseItem.Description,
                     Room = houseItem.Room,
+                    
                     Garage = houseItem.Garage,
                     Bath = houseItem.Bath,
                     YearBuilt = houseItem.YearBuilt,
+                    
                     Area = houseItem.Area,
+                    Price= houseItem.Price,
                     Parking = houseItem.Parking,
+
                     Garden = houseItem.Garden,
                     Balcony = houseItem.Balcony,
                     SalePrice = houseItem.SalePrice,
+                    
                     Location = houseItem.Location,
                     OwnerId = houseItem.OwnerId,
                     Category = houseItem.Category,
+
                     ImagePath1 = uniqueFileName1,
                     ImagePath2 = uniqueFileName2,
                     ImagePath3 = uniqueFileName3,
-                };  
-                _context.HouseItems.Add(newHouseItem);
-                await _context.SaveChangesAsync();
-
+                };
+                //    // сохраняем в бд все изменения
+                return RedirectToAction("Index", "Apartments");
             }
-            else return NotFound();
-
-            
-            //    // сохраняем в бд все изменения
-            return RedirectToAction("Create", "Apartments");
+             return NotFound();
         }
 
         private string ProcessUploadedFile1(HouseItemModel houseItem)
@@ -125,25 +126,74 @@ namespace Houzing.Controllers
         [Authorize(Roles = "User")]
         // GET: HouseItemsController/Edit/5
         [HttpGet]
-        public IActionResult EditHouseItem(int? Id)
+        public async Task<IActionResult> EditHouseItem(int? id)
         {
-            if (Id != null)
+            HouseItem model = await _context.HouseItems.FindAsync(id);
+
+            if(model != null)
             {
-                HouseItem s = _context.HouseItems.Find((int)Id);
-                if (s != null)
+                HouseEditModel viewModel = new()
                 {
-                    ViewBag.Houses = s;
-                }
-                else return RedirectToAction("EditHouseItem");
+                    Id = model.Id,
+                    Name = model.Name,
+                    Description = model.Description,
+                    Room = model.Room,
+
+                    Garage = model.Garage,
+                    Bath = model.Bath,
+                    YearBuilt = model.YearBuilt,
+
+                    Area = model.Area,
+                    Price = model.Price,
+                    Parking = model.Parking,
+
+                    Garden = model.Garden,
+                    Balcony = model.Balcony,
+                    SalePrice = model.SalePrice,
+
+                    Location = model.Location,
+                    OwnerId = model.OwnerId,
+                    Category = model.Category,
+
+                    ImagePathEdit1 = model.ImagePath1,
+                    ImagePathEdit2 = model.ImagePath2,
+                    ImagePathEdit3 = model.ImagePath3,
+                };
+                ViewBag.Houses = viewModel;
+                return View(viewModel);
             }
-            return View();
+            return NotFound();
         }
         [HttpPost]
-        public IActionResult EditHouseItem(HouseItem houseItem)
+        public async Task<IActionResult> EditHouseItem(HouseEditModel houseItem)
         {
-            _context.Entry(houseItem).State = EntityState.Modified;
-            _context.SaveChanges();
-            return RedirectToAction("Index", "Apartment");
+            HouseItem existMenu = await _context.HouseItems.FindAsync(houseItem.Id);
+
+            if (ModelState.IsValid)
+            {
+                existMenu.Name = houseItem.Name;
+                existMenu.Description = houseItem.Description;
+                existMenu.Room = houseItem.Room;
+                existMenu.Bath = houseItem.Bath;
+                existMenu.YearBuilt = houseItem.YearBuilt;
+                existMenu.Garage = houseItem.Garage;
+                existMenu.Parking = houseItem.Parking;
+                existMenu.Garden = houseItem.Garden;
+                existMenu.Price = houseItem.Price;
+                existMenu.SalePrice = houseItem.SalePrice;
+                existMenu.Area = houseItem.Area;
+                existMenu.Balcony = houseItem.Balcony;
+                existMenu.Location = houseItem.Location;
+                existMenu.OwnerId = houseItem.OwnerId;
+                existMenu.Category = houseItem.Category;
+                existMenu.ImagePath1 = ProcessUploadedFile1(houseItem);
+                existMenu.ImagePath2 = ProcessUploadedFile2(houseItem);
+                existMenu.ImagePath3 = ProcessUploadedFile3(houseItem);
+               
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index", "Apartments");
+            };
+            return View(houseItem);
         }
 
         // POST: HouseItemsController/Delete/5

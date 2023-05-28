@@ -10,5 +10,7 @@
         public string? Email { get; set; }
         public string? PasportNumber { get; set; }
         public string? PhoneNumber { get; set; }
+        public List<Apartment> Apartments { get; set; } = new List<Apartment>();
+        public List<HouseItem> HouseItems { get; set; } = new List<HouseItem>();
     }
 }

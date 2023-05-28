@@ -152,6 +152,34 @@ namespace Houzing.Migrations
                     b.ToTable("Apartments");
                 });
 
+            modelBuilder.Entity("Houzing.Data.Houses.Employer", b =>
+                {
+                    b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Postion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Employer");
+                });
+
             modelBuilder.Entity("Houzing.Data.Houses.HouseItem", b =>
                 {
                     b.Property<int?>("Id")
@@ -395,7 +423,7 @@ namespace Houzing.Migrations
                         .HasForeignKey("HouseItemId");
 
                     b.HasOne("Houzing.Data.Houses.Owner", "Owner")
-                        .WithMany()
+                        .WithMany("Apartments")
                         .HasForeignKey("OwnerId");
 
                     b.Navigation("HouseItem");
@@ -406,7 +434,7 @@ namespace Houzing.Migrations
             modelBuilder.Entity("Houzing.Data.Houses.HouseItem", b =>
                 {
                     b.HasOne("Houzing.Data.Houses.Owner", "Owner")
-                        .WithMany()
+                        .WithMany("HouseItems")
                         .HasForeignKey("OwnerId");
 
                     b.Navigation("Owner");
@@ -461,6 +489,13 @@ namespace Houzing.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Houzing.Data.Houses.Owner", b =>
+                {
+                    b.Navigation("Apartments");
+
+                    b.Navigation("HouseItems");
                 });
 #pragma warning restore 612, 618
         }

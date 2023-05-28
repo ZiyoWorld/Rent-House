@@ -45,7 +45,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="TypeHouse" class="control-label"></label>
-                <input asp-for="TypeHouse" class="form-control" />
+                <select asp-for="TypeHouse" class="form-select" aria-label="Default select example">
+                    <option selected>Choose Type your purpose?</option>
+                    <option value="Rent-House">Rent House</option>
+                    <option value="Sale-House">Sale House</option>
+                </select>
                 <span asp-validation-for="TypeHouse" class="text-danger"></span>
             </div>
             <div class="form-group">

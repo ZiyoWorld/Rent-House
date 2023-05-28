@@ -14,7 +14,7 @@ namespace Houzing.Data
        public DbSet<Owner> Owners { get; set; }
        public DbSet<HouseItem> HouseItems { get; set; }
        public DbSet<Apartment> Apartments { get; set; }
-       public DbSet<Houzing.Data.Houses.Employer> Employer { get; set; } = default!;
+       public DbSet<Employer> Employer { get; set; }
        //public DbSet<Image> Images { get; set; }
     }
 }

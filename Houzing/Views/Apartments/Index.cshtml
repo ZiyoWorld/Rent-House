@@ -1,12 +1,62 @@
-﻿@model Houzing.Models.AparmentViewModel
-
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    @foreach (var app in Model.HouseItemsView)
-    {
-        <div>@app.Name</div>
+<h1 class="text-center">Properties</h1>
+
+<div class="wrapper-card">
+    @foreach(var item in ViewBag.AllData)
+    {  
+        <div class="apartment-card">
+            <div class="apartment-card-image">
+                @if (item.ImagePath1 != null)
+                {
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        <img src="/photos/cover/@item.ImagePath1" class="image-card" />
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        <img src="/photos/gallery/No-Image-Placeholder.png" class="image-card-no" alt="No Image" />
+                    </a>
+                }
+            </div>
+            <div class="section-card">
+                <div class="apartment-card-address">
+                    <p class="apartment-card-address-name">@item.Name</p>
+                    <p class="apartment-card-address-address">@item.Adress, @item.Region, @item.Country </p>
+                </div>
+                <div class="equipment">
+                    <div class="equip-1">
+                        <img src="/assets/icons/bed.png" /> 
+                        <i>@item.Room Rooms </i>
+                    </div>
+                    <div class="equip-1">
+                        <img src="/assets/icons/bath.png" />
+                        <i>@item.Bath Baths </i>
+                    </div><div class="equip-1">
+                        <img src="/assets/icons/car.png" />
+                        <i>@item.Garage Garages</i>
+                    </div><div class="equip-1">
+                        <img src="/assets/icons/ruler.png" />
+                        <i>@item.Area Areas</i>
+                    </div>
+                </div>
+                <hr />
+                <div class="price-section">
+                    <div class="prices-min">
+                        <i>@item.MinPrice /month </i>
+                        <i> For Sale: @item.MaxPrice</i>
+                    </div>
+                    <div class="prices-heart">
+                        <a asp-action="Details" asp-route-id="@item.Id">
+                           <img src="/assets/icons/1.png" alt="detail">
+                        </a>
+                        <img src="/assets/icons/3.png" alt="love" />
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 </div>

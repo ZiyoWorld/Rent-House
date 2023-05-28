@@ -15,23 +15,34 @@ namespace Houzing.Controllers
     public class ApartmentsController : Controller
     {
         private readonly ApplicationDbContext _context;
-
         public ApartmentsController(ApplicationDbContext context)
         {
             _context = context;
         }
-
-        // GET: Apartments
         public async Task<IActionResult> Index()
         {
-            var tables = new AparmentViewModel
-            {
-                ApartmentsView = _context.Apartments.ToList(),
-                OwnersView = _context.Owners.ToList(),
-                HouseItemsView = _context.HouseItems.ToList()
-            };
-            return View(tables);
+            var allData = from a in _context.Apartments join h in _context.HouseItems on a.HouseItemId equals h.Id                      
+                          select new {
+                              a.Id,
+                              h.Room,
+                              h.ImagePath1,
+                              a.Adress,
+                              h.Bath,
+                              h.Garage,
+                              h.Area,
+                              a.MaxPrice,
+                              a.MinPrice,
+                              a.City,
+                              a.Region,
+                              a.Country,
+                              h.Name,
+                               };
+            ViewBag.AllData = allData;
+
+            return View();
         }
+
+
         [Authorize(Roles = "Admin, Employer")]
         public async Task<IActionResult> ManageApartment()
         {
@@ -61,10 +72,11 @@ namespace Houzing.Controllers
         }
 
         // GET: Apartments/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewBag.HouseItemVm = new SelectList(_context.HouseItems, "Id", "Id");
-            ViewBag.OwnerVm = new SelectList(_context.Owners, "Id", "Id");
+            ViewBag.HouseItemVm = _context.HouseItems.ToList().LastOrDefault().Id;
+            ViewBag.OwnerVm = _context.Owners.ToList().LastOrDefault().Id;
+
             return View();
         }
 
@@ -73,7 +85,7 @@ namespace Houzing.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Adress,Country,Region,City,NumberHouse,Floor,PhoneNumber,Repair,MaxPrice,MinPrice,Status,HouseItemId,OwnerId")] Apartment apartment)
+        public async Task<IActionResult> Create([Bind("Id,Adress,Country,Region,City,NumberHouse,Floor,TypeHouse,Repair,MaxPrice,MinPrice,Status,HouseItemId,OwnerId")] Apartment apartment)
         {
             if (ModelState.IsValid)
             {
@@ -109,7 +121,7 @@ namespace Houzing.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, [Bind("Id,Adress,Country,Region,City,NumberHouse,Floor,PhoneNumber,Repair,MaxPrice,MinPrice,Status,HouseItemId,OwnerId")] Apartment apartment)
+        public async Task<IActionResult> Edit(int? id, [Bind("Id,Adress,Country,Region,City,NumberHouse,Floor,TypeHouse,Repair,MaxPrice,MinPrice,Status,HouseItemId,OwnerId")] Apartment apartment)
         {
             if (id != apartment.Id)
             {

@@ -5,6 +5,46 @@
       "PackagePath": "staticwebassets\\Houzing.bundle.scp.css"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\Uploads\\4f01401b-53f6-440a-9c36-38a868cb24f1.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\4f01401b-53f6-440a-9c36-38a868cb24f1.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\Uploads\\8a42cbd1-ce4e-43bf-8c21-ac3473402f03.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\8a42cbd1-ce4e-43bf-8c21-ac3473402f03.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\1.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\1.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\3 (4).png",
+      "PackagePath": "staticwebassets\\assets\\icons\\3 (4).png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\3.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\3.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\bath.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\bath.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\bed.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\bed.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\car.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\car.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\for sale.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\for sale.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\ruler.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\ruler.png"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\1-uy.jpg",
       "PackagePath": "staticwebassets\\assets\\imgs\\1-uy.jpg"
     },
@@ -285,6 +325,18 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\00c7287b-c5be-49f6-aedc-870a58f817a6_photo_2021-07-20_09-55-42.mp4",
+      "PackagePath": "staticwebassets\\photos\\cover\\00c7287b-c5be-49f6-aedc-870a58f817a6_photo_2021-07-20_09-55-42.mp4"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\0d80b57f-6ac4-4fe5-8509-c3c5346b131d_1.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\0d80b57f-6ac4-4fe5-8509-c3c5346b131d_1.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\1a4a6d5a-50af-48b3-b07d-2871723cbb7a_images (4).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\1a4a6d5a-50af-48b3-b07d-2871723cbb7a_images (4).jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\2883212a-981b-4397-9f6f-6ceb54a1d99f_images (1).jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\2883212a-981b-4397-9f6f-6ceb54a1d99f_images (1).jpg"
     },
@@ -313,6 +365,10 @@
       "PackagePath": "staticwebassets\\photos\\cover\\42ed2a05-6672-49dc-b8e9-b7bfa0a2915a_images (2).jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\50ea0727-3171-4fdb-8e3a-ddcae5ca16e5_images (1).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\50ea0727-3171-4fdb-8e3a-ddcae5ca16e5_images (1).jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\585b7455-22b8-4e4b-a2ee-831cb615720d_Mirziyod.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\585b7455-22b8-4e4b-a2ee-831cb615720d_Mirziyod.jpg"
     },
@@ -333,8 +389,16 @@
       "PackagePath": "staticwebassets\\photos\\cover\\8a257cd3-d410-437b-9796-e79c61402498_images (2).jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\973bc4e5-d48e-4fd3-a4d8-b2fc41951e20_image.webp",
+      "PackagePath": "staticwebassets\\photos\\cover\\973bc4e5-d48e-4fd3-a4d8-b2fc41951e20_image.webp"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\97925b21-7180-4725-a4b8-89b42d7f3485_images (3).jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\97925b21-7180-4725-a4b8-89b42d7f3485_images (3).jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\983c782b-ddc8-4e6d-a8a5-ed8e98d0ac4b_images.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\983c782b-ddc8-4e6d-a8a5-ed8e98d0ac4b_images.jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\9d32a557-20b1-4f8d-9034-f2801eccd1ca_images (3).jpg",
@@ -369,12 +433,20 @@
       "PackagePath": "staticwebassets\\photos\\cover\\bc8c0ade-ff7e-4d9a-b43e-a5ec1679066e_RE_for_sale_agent.jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\bf0be2bb-fb66-46b8-a1e2-08b4bf440756_images (2).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\bf0be2bb-fb66-46b8-a1e2-08b4bf440756_images (2).jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\c64ecdf8-1d58-4b9f-bd63-f84234e42f40_photo_2022-07-02_07-53-08.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\c64ecdf8-1d58-4b9f-bd63-f84234e42f40_photo_2022-07-02_07-53-08.jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\caf54dcf-1567-43f0-94af-ae64fad76501_Mirziyod.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\caf54dcf-1567-43f0-94af-ae64fad76501_Mirziyod.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\cc019de5-88d4-4acc-83c1-d5dbbef99016_3.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\cc019de5-88d4-4acc-83c1-d5dbbef99016_3.jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\cfe2cbe5-ef3f-4df1-aed4-83c66cfd45c0_images (5).jpg",
@@ -389,12 +461,32 @@
       "PackagePath": "staticwebassets\\photos\\cover\\d61deb1f-dfdd-4689-8170-9b00f5fc58d5_photo_2022-07-02_01-30-47.jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\d961d4b1-0822-417a-8cd3-9fb5e99a0639_images.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\d961d4b1-0822-417a-8cd3-9fb5e99a0639_images.jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\de1f9ec4-211d-4325-b868-7ea428ab87ff_photo_2021-04-23_17-23-21.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\de1f9ec4-211d-4325-b868-7ea428ab87ff_photo_2021-04-23_17-23-21.jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\e2f0d4f2-d35b-4712-86ed-92be6c8d2371_Mirziyod.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\e2f0d4f2-d35b-4712-86ed-92be6c8d2371_Mirziyod.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\ee678ad1-9236-45b8-8efe-ac8b1ef582d6_photo_2021-07-20_09-55-42.mp4",
+      "PackagePath": "staticwebassets\\photos\\cover\\ee678ad1-9236-45b8-8efe-ac8b1ef582d6_photo_2021-07-20_09-55-42.mp4"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\f768cbcb-3c0c-4418-a04b-0c4317206d36_images (3).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\f768cbcb-3c0c-4418-a04b-0c4317206d36_images (3).jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\No-Image-Placeholder.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\No-Image-Placeholder.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\no-image.jpg",
+      "PackagePath": "staticwebassets\\photos\\gallery\\no-image.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Houzing.Microsoft.AspNetCore.StaticWebAssets.props",
