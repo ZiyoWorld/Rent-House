@@ -201,6 +201,17 @@ nav {
     padding: 30px 0;
     margin: 30px 0;
 }
+
+.p-subs {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #696969;
+}
+
+
 /*category styles*/
 .category {
     padding: 30px 0;
@@ -213,18 +224,23 @@ nav {
 }
 
 /*card-styles*/
+.wrapper-section{
+    max-width: 1240px;
+}
+.text-container {
+    margin-top: 10px;
+}
 .wrapper-card {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    padding: 5px 0; 
-    max-width: 1200px;
+    width: 100%;
 }
 
 .apartment-card {
     max-width: 360px;
-    min-width: 310px;
+    min-width: 280px;
     max-height: 450px;
     min-height: 370px;
     width: 100%;

@@ -152,6 +152,89 @@ namespace Houzing.Migrations
                     b.ToTable("Apartments");
                 });
 
+            modelBuilder.Entity("Houzing.Data.Houses.Customer", b =>
+                {
+                    b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Citizienship")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DataBirthday")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LinkMessenger")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customer");
+                });
+
+            modelBuilder.Entity("Houzing.Data.Houses.Deal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("ApartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DateDeal")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EmployerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FromDeal")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Summ")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ToDeal")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApartmentId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("EmployerId");
+
+                    b.ToTable("Deal");
+                });
+
             modelBuilder.Entity("Houzing.Data.Houses.Employer", b =>
                 {
                     b.Property<int?>("Id")
@@ -429,6 +512,27 @@ namespace Houzing.Migrations
                     b.Navigation("HouseItem");
 
                     b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("Houzing.Data.Houses.Deal", b =>
+                {
+                    b.HasOne("Houzing.Data.Houses.Apartment", "Apartment")
+                        .WithMany()
+                        .HasForeignKey("ApartmentId");
+
+                    b.HasOne("Houzing.Data.Houses.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId");
+
+                    b.HasOne("Houzing.Data.Houses.Employer", "Employer")
+                        .WithMany()
+                        .HasForeignKey("EmployerId");
+
+                    b.Navigation("Apartment");
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Employer");
                 });
 
             modelBuilder.Entity("Houzing.Data.Houses.HouseItem", b =>

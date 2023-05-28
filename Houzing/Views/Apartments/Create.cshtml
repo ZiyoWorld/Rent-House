@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Create</h1>
@@ -82,14 +83,14 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label asp-for="MaxPrice" class="control-label"></label>
-                        <input asp-for="MaxPrice" class="form-control" />
+                        <input asp-for="MaxPrice" placeholder="Enter for sale" class="form-control" />
                         <span asp-validation-for="MaxPrice" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label asp-for="MinPrice" class="control-label"></label>
-                        <input asp-for="MinPrice" class="form-control" />
+                        <input asp-for="MinPrice" placeholder="Enter for apartment" class="form-control" />
                         <span asp-validation-for="MinPrice" class="text-danger"></span>
                     </div>
                 </div>

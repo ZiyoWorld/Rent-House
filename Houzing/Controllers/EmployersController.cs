@@ -13,7 +13,6 @@ namespace Houzing.Controllers
     public class EmployersController : Controller
     {
         private readonly ApplicationDbContext _context;
-
         public EmployersController(ApplicationDbContext context)
         {
             _context = context;

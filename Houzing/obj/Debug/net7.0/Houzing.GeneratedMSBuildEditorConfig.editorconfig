@@ -204,6 +204,46 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBhcnRtZW50c1xNYW5hZ2VBcGFydG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Customers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Customers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Deals/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVhbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Deals/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVhbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Deals/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVhbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Deals/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVhbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Deals/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVhbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Employers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -79,10 +79,12 @@ namespace Houzing.Controllers
                     ImagePath2 = uniqueFileName2,
                     ImagePath3 = uniqueFileName3,
                 };
+                _context.HouseItems.Add(newHouseItem);
+                await _context.SaveChangesAsync();
                 //    // сохраняем в бд все изменения
-                return RedirectToAction("Index", "Apartments");
+                return RedirectToAction("Create", "Apartments");
             }
-             return NotFound();
+             return View();
         }
 
         private string ProcessUploadedFile1(HouseItemModel houseItem)
@@ -165,6 +167,7 @@ namespace Houzing.Controllers
             return NotFound();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditHouseItem(HouseEditModel houseItem)
         {
             HouseItem existMenu = await _context.HouseItems.FindAsync(houseItem.Id);
@@ -192,8 +195,8 @@ namespace Houzing.Controllers
                
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index", "Apartments");
-            };
-            return View(houseItem);
+            }
+            else return View(houseItem);
         }
 
         // POST: HouseItemsController/Delete/5
