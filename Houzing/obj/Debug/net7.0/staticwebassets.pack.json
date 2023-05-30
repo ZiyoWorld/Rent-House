@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\assets\\icons\\3.png"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\House.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\House.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\Korzina.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\Korzina.png"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\bath.png",
       "PackagePath": "staticwebassets\\assets\\icons\\bath.png"
     },
@@ -361,6 +369,10 @@
       "PackagePath": "staticwebassets\\photos\\cover\\2df8a7e2-e086-417c-b162-abfdb1f37816_images (5).jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\2e3ad13e-e62f-4f53-9751-29356b4b49d8_images (1).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\2e3ad13e-e62f-4f53-9751-29356b4b49d8_images (1).jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\2e4b03cc-93a7-4aff-96f2-9c403c31d271_photo-1568605114967-8130f3a36994.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\2e4b03cc-93a7-4aff-96f2-9c403c31d271_photo-1568605114967-8130f3a36994.jpg"
     },
@@ -403,6 +415,10 @@
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\50ea0727-3171-4fdb-8e3a-ddcae5ca16e5_images (1).jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\50ea0727-3171-4fdb-8e3a-ddcae5ca16e5_images (1).jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\57a08b4d-7843-42f5-8069-4109d14bcc7d_beautiful-exterior-home-pictures-new-home-design-images-modern-best-house-design-images-best-house-images-images-latest-172871922.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\57a08b4d-7843-42f5-8069-4109d14bcc7d_beautiful-exterior-home-pictures-new-home-design-images-modern-best-house-design-images-best-house-images-images-latest-172871922.jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\585b7455-22b8-4e4b-a2ee-831cb615720d_Mirziyod.jpg",
@@ -487,6 +503,10 @@
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\bc8c0ade-ff7e-4d9a-b43e-a5ec1679066e_RE_for_sale_agent.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\bc8c0ade-ff7e-4d9a-b43e-a5ec1679066e_RE_for_sale_agent.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\bef38c63-8bb2-42e4-baec-b54e903552c4_rent_house_73089751-5bfc333346e0fb002602ddbe.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\bef38c63-8bb2-42e4-baec-b54e903552c4_rent_house_73089751-5bfc333346e0fb002602ddbe.jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\bf0be2bb-fb66-46b8-a1e2-08b4bf440756_images (2).jpg",

@@ -8,9 +8,12 @@
 {
     <a class="btn btn-danger text-white mx-2 text-dark font-size-sm" asp-controller="UsersRoles" asp-action="Index">Manage User</a>
 }
+   <a class="btn" asp-controller="Deals" style="margin-right: 20px;" asp-action="Index">
+       <img src="/assets/icons/House.png" style="width: 25px; height: 25px; background:white; " alt="Korzina" />
+   </a>
 
 @if (SignInManager.IsSignedIn(User))
-{
+{   
     <div class="dropdown dropdown-sm-start">
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             Admin

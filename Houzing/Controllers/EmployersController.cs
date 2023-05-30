@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Houzing.Data;
 using Houzing.Data.Houses;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Houzing.Controllers
 {
@@ -18,6 +19,7 @@ namespace Houzing.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Admin, Employer")]
         // GET: Employers
         public async Task<IActionResult> Index()
         {
@@ -135,7 +137,7 @@ namespace Houzing.Controllers
 
             return View(employer);
         }
-
+        [Authorize(Roles = "Admin")]
         // POST: Employers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
