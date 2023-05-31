@@ -7,18 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Houzing.Data;
 using Houzing.Data.Houses;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Houzing.Controllers
 {
     public class CustomersController : Controller
     {
         private readonly ApplicationDbContext _context;
-
         public CustomersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
+        [Authorize(Roles ="Admin, Employer")]
         // GET: Customers
         public async Task<IActionResult> Index()
         {
@@ -41,13 +42,17 @@ namespace Houzing.Controllers
             {
                 return NotFound();
             }
-
             return View(customer);
         }
 
         // GET: Customers/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int? id)
         {
+            Apartment a = await _context.Apartments.FindAsync((int?)id);
+            if(a != null)
+            {
+                ViewBag.ApartId = a;
+            }
             return View();
         }
 
@@ -62,7 +67,7 @@ namespace Houzing.Controllers
             {
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create", "Deals");
             }
             return View(customer);
         }

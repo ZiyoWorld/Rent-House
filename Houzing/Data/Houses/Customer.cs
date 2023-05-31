@@ -11,5 +11,7 @@
         public string? LinkMessenger { get; set; }
         public string? Comment { get; set; }
         public string? Address { get; set; }
+        public int? ApartmentId { get; set; }
+        public Apartment? Apartment { get; set; }
     }
 }

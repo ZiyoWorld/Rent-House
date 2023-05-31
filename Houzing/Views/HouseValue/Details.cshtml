@@ -1,0 +1,110 @@
+﻿@using Houzing.Data;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@model Houzing.Data.Houses.HouseItem
+
+<div class="container mt-3" >
+        <div class="item-image-container">
+            <div class="item-image-left">
+                <img src="/photos/cover/@Model.ImagePath1" alt="No Image" />
+            </div>
+            <div class="item-image-right">
+            <div class="item-image-top">
+                @if (Model.ImagePath2 != null)
+                {
+                    <img src="/photos/cover/@Model.ImagePath2" alt="No Image" />
+                }
+                else
+                {
+                    <h2 class="text-center"> No Image</h2>
+                }
+            </div>
+            <div class="item-image-top">
+                @if (Model.ImagePath3 != null)
+                {
+                    <img src="/photos/cover/@Model.ImagePath3" alt="No Image" />
+                }
+                else
+                {
+                    <h2 class="text-center"> No Image</h2>
+                }
+            </div>
+            </div>
+        </div>
+
+        <div class="item-data">
+         <div>
+              <div class="item-name">@Model.Name</div>
+              <a asp-action="Create" asp-controller="Customers">Order Now</a>
+         </div>
+        <div class="equipment">
+            <div class="equip-1">
+                <img src="/assets/icons/bed.png" />
+                <i>@Model.Room Rooms </i>
+            </div>
+            <div class="equip-1">
+                <img src="/assets/icons/bath.png" />
+                <i>@Model.Bath Baths </i>
+            </div>
+            <div class="equip-1">
+                <img src="/assets/icons/car.png" />
+                <i>@Model.Garage Garages</i>
+            </div>
+            <div class="equip-1">
+                <img src="/assets/icons/ruler.png" />
+                <i>@Model.Area Areas</i>
+            </div>
+            <div class="equip-1">
+                <img src="/assets/icons/ruler.png" />
+                <i>@Model.YearBuilt Year built</i>
+            </div>
+            <div class="prices-min">
+                <del>@Model.Price /month </del>
+                <i> For Sale: @Model.Price</i>
+            </div>
+        </div>
+        <div class="decription">
+            <h2 class="location">Description</h2> 
+            <div class="decription-data">
+                @Model.Description . and I can add 
+                These quotes about home will make your heart warm just thinking about the place you grew up or 
+                the place you come home to every night. To bring back memories from your home when you were young, 
+                check out our home interiors and gifts, such as canvas prints, photo tiles, wind chimes, trivets,
+                cutting boards, coffee mugs and blankets.  Inspirational quotes for your custom wall art are also a
+                great and simple way 
+                to fill our home with warmth and surround ourselves with words that affect us.
+            </div>
+        </div>
+        <div>
+            <div class="location">Adds</div>
+            <ul class="others">
+                <li><b>Parking:</b> @Model.Parking </li>
+                <li><b>Balcony:</b> @Model.Balcony</li>
+                <li><b>Garden:</b> @Model.Garden</li>
+            </ul>
+            <ul class="others">
+                <li><b>SalePrice:</b> @Model.SalePrice </li>
+                <li><b>ZipCode:</b> Yes</li>
+                <li><b>Who is Owner?:</b> <a asp-action="Details" class="btn btn-sm btn-primary" asp-controller="Owner" asp-route-id="@Model.OwnerId">Owner Id</a></li>
+            </ul>
+        </div>
+        
+        <div>
+            <h2 class="location">Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95891.38591868505!2d69.17726854489334!3d41.31743826800045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b683296c3bd%3A0xfbfd29d025872dd2!2sTashkent%20City%20Planetarium!5e0!3m2!1sru!2sby!4v1685522315456!5m2!1sru!2sby" 
+            width="600" height="450" style="border:0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </div>
+    <div>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <a asp-action="EditHouseItem" class="btn btn-info" asp-route-id="@Model?.Id">Edit</a> 
+        }
+        <a asp-action="Index" asp-controller="Apartments" class="btn btn-success">Back to Apartment</a>
+    </div>
+</div>
+
+
+             

@@ -1,12 +1,5 @@
 ﻿@model Houzing.Data.Houses.Apartment
 
-@{
-    ViewData["Title"] = "Details";
-    Layout = "/Views/Apartments/_ApartmentLayout.cshtml";
-}
-
-<h1>Details</h1>
-
 <div>
     <h4>Apartment</h4>
     <hr />
@@ -90,9 +83,6 @@
             @Html.DisplayFor(model => model.Owner.Id)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Create" asp-controller="Deals" class="btn btn-primary">Order now</a>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "z9cBtD6oyS5vG91yUza9SsVAKUoiQ4ztOule+7Hl39A=",
+  "Hash": "+8MOFw6nOhhGfO00R1Ho+IHKEa5RJ2cWP/h4kg/VAvA=",
   "Source": "Houzing",
   "BasePath": "_content/Houzing",
   "Mode": "Default",
@@ -102,6 +102,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\3.png"
     },
     {
+      "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\585525.png",
+      "SourceId": "Houzing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\",
+      "BasePath": "_content/Houzing",
+      "RelativePath": "assets/icons/585525.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\icons\\585525.png"
+    },
+    {
       "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\bath.png",
       "SourceId": "Houzing",
       "SourceType": "Discovered",
@@ -136,6 +153,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\bed.png"
     },
     {
+      "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\calendar 1.png",
+      "SourceId": "Houzing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\",
+      "BasePath": "_content/Houzing",
+      "RelativePath": "assets/icons/calendar 1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\icons\\calendar 1.png"
+    },
+    {
       "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\car.png",
       "SourceId": "Houzing",
       "SourceType": "Discovered",
@@ -151,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\icons\\car.png"
+    },
+    {
+      "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\edit.png",
+      "SourceId": "Houzing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\",
+      "BasePath": "_content/Houzing",
+      "RelativePath": "assets/icons/edit.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\icons\\edit.png"
     },
     {
       "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\for sale.png",
@@ -219,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\icons\\ruler.png"
+    },
+    {
+      "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\share 1.png",
+      "SourceId": "Houzing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\",
+      "BasePath": "_content/Houzing",
+      "RelativePath": "assets/icons/share 1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\icons\\share 1.png"
     },
     {
       "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\1345874.png",
@@ -2074,6 +2142,23 @@
       "OriginalItemSpec": "wwwroot\\photos\\cover\\b3760772-ffce-4380-a2d4-42a2585017fe_photo_2022-06-16_11-51-08.jpg"
     },
     {
+      "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\b5d84234-6ede-48fd-8fc1-4163095d4c49_images (2).jpg",
+      "SourceId": "Houzing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\",
+      "BasePath": "_content/Houzing",
+      "RelativePath": "photos/cover/b5d84234-6ede-48fd-8fc1-4163095d4c49_images (2).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\cover\\b5d84234-6ede-48fd-8fc1-4163095d4c49_images (2).jpg"
+    },
+    {
       "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\b78cb120-25df-477f-964a-efabd0c295a5_beautiful-exterior-home-pictures-new-home-design-images-modern-best-house-design-images-best-house-images-images-latest-172871922.jpg",
       "SourceId": "Houzing",
       "SourceType": "Discovered",
@@ -2174,6 +2259,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\photos\\cover\\bf0be2bb-fb66-46b8-a1e2-08b4bf440756_images (2).jpg"
+    },
+    {
+      "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\bf1716f1-a487-4c29-916d-0512a5bedbed_photo-1568605114967-8130f3a36994.jpg",
+      "SourceId": "Houzing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\",
+      "BasePath": "_content/Houzing",
+      "RelativePath": "photos/cover/bf1716f1-a487-4c29-916d-0512a5bedbed_photo-1568605114967-8130f3a36994.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\cover\\bf1716f1-a487-4c29-916d-0512a5bedbed_photo-1568605114967-8130f3a36994.jpg"
     },
     {
       "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\c64ecdf8-1d58-4b9f-bd63-f84234e42f40_photo_2022-07-02_07-53-08.jpg",
@@ -2361,6 +2463,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\photos\\cover\\ee678ad1-9236-45b8-8efe-ac8b1ef582d6_photo_2021-07-20_09-55-42.mp4"
+    },
+    {
+      "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\f304851e-27a5-488e-acb2-9e81d8c7466f_images (1).jpg",
+      "SourceId": "Houzing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\",
+      "BasePath": "_content/Houzing",
+      "RelativePath": "photos/cover/f304851e-27a5-488e-acb2-9e81d8c7466f_images (1).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\cover\\f304851e-27a5-488e-acb2-9e81d8c7466f_images (1).jpg"
     },
     {
       "Identity": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\f768cbcb-3c0c-4418-a04b-0c4317206d36_images (3).jpg",

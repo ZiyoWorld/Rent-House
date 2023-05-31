@@ -25,6 +25,7 @@ namespace Houzing.Controllers
                           select new {
                               a.Id,
                               h.Room,
+                              a.HouseItemId,
                               h.ImagePath1,
                               a.Adress,
                               h.Bath,
@@ -49,15 +50,13 @@ namespace Houzing.Controllers
             var applicationDbContext = _context.Apartments.Include(a => a.HouseItem).Include(a => a.Owner);
             return View(await applicationDbContext.ToListAsync());
         }
-
-
         // GET: Apartments/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Apartments == null)
-            {
+           if (id == null || _context.Apartments == null)
+           {
                 return NotFound();
-            }
+           }
 
             var apartment = await _context.Apartments
                 .Include(a => a.HouseItem)

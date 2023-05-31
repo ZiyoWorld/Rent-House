@@ -33,6 +33,24 @@ namespace Houzing.Controllers
         {
             return View(_context.HouseItems.ToList());
         }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _context.HouseItems == null)
+            {
+                return NotFound();
+            }
+
+            var houseItem = await _context.HouseItems
+                .Include(a => a.Owner)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (houseItem == null)
+            {
+                return NotFound();
+            }
+
+            return View(houseItem);
+        }
         // GET: HouseItemsController/Details/5
         [Authorize(Roles = "User")]
         // GET: HouseItemsController/Create
@@ -195,8 +213,8 @@ namespace Houzing.Controllers
                
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index", "Apartments");
-            }
-            else return View(houseItem);
+            }    
+           return View(houseItem);
         }
 
         // POST: HouseItemsController/Delete/5

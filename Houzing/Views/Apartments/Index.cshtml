@@ -1,4 +1,9 @@
-﻿@{
+﻿@using Houzing.Data;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
     ViewData["Title"] = "Index";
     Layout = "/Views/Apartments/_ApartmentLayout.cshtml";
 }
@@ -13,7 +18,7 @@
                     <div class="apartment-card-image">
                         @if (item.ImagePath1 != null)
                         {
-                            <a asp-action="Details" asp-route-id="@item.Id">
+                            <a asp-action="Details" asp-controller="HouseValue" asp-route-id="@item.HouseItemId">
                                 <img src="/photos/cover/@item.ImagePath1" class="image-card" />
                             </a>
                         }
@@ -52,7 +57,19 @@
                                 <i> For Sale: @item.MaxPrice</i>
                             </div>
                             <div class="prices-heart">
-                                <a asp-action="Details" asp-route-id="@item.Id">
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    <a asp-action="Edit" asp-controller="Apartments" asp-route-id="@item.Id">
+                                        <img src="/assets/icons/edit.png" class="edit-img" alt="edit">
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-action="Create" asp-controller="Customers" asp-route-id="@item.Id">
+                                        <img src="/assets/icons/585525.png" class="edit-img" alt="edit">
+                                    </a>
+                                }
+                                <a asp-action="Details" asp-controller="HouseValue"  asp-route-id="@item.HouseItemId">
                                     <img src="/assets/icons/1.png" alt="detail">
                                 </a>
                                 <img src="/assets/icons/3.png" alt="love" />
@@ -63,4 +80,9 @@
             }
         </div>
     </div>
+    <hr />
+    @if (User.IsInRole("Admin") || User.IsInRole("Employer"))
+    {
+        <a asp-action="ManageApartment" class="btn btn-info" asp-controller="Apartments">Manage Apartments</a>
+    }
 </div>

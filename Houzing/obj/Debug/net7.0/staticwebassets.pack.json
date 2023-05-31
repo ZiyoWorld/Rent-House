@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\assets\\icons\\3.png"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\585525.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\585525.png"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\House.png",
       "PackagePath": "staticwebassets\\assets\\icons\\House.png"
     },
@@ -41,8 +45,16 @@
       "PackagePath": "staticwebassets\\assets\\icons\\bed.png"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\calendar 1.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\calendar 1.png"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\car.png",
       "PackagePath": "staticwebassets\\assets\\icons\\car.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\edit.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\edit.png"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\for sale.png",
@@ -51,6 +63,10 @@
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\ruler.png",
       "PackagePath": "staticwebassets\\assets\\icons\\ruler.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\share 1.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\share 1.png"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\imgs\\1-uy.jpg",
@@ -489,6 +505,10 @@
       "PackagePath": "staticwebassets\\photos\\cover\\b3760772-ffce-4380-a2d4-42a2585017fe_photo_2022-06-16_11-51-08.jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\b5d84234-6ede-48fd-8fc1-4163095d4c49_images (2).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\b5d84234-6ede-48fd-8fc1-4163095d4c49_images (2).jpg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\b78cb120-25df-477f-964a-efabd0c295a5_beautiful-exterior-home-pictures-new-home-design-images-modern-best-house-design-images-best-house-images-images-latest-172871922.jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\b78cb120-25df-477f-964a-efabd0c295a5_beautiful-exterior-home-pictures-new-home-design-images-modern-best-house-design-images-best-house-images-images-latest-172871922.jpg"
     },
@@ -511,6 +531,10 @@
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\bf0be2bb-fb66-46b8-a1e2-08b4bf440756_images (2).jpg",
       "PackagePath": "staticwebassets\\photos\\cover\\bf0be2bb-fb66-46b8-a1e2-08b4bf440756_images (2).jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\bf1716f1-a487-4c29-916d-0512a5bedbed_photo-1568605114967-8130f3a36994.jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\bf1716f1-a487-4c29-916d-0512a5bedbed_photo-1568605114967-8130f3a36994.jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\c64ecdf8-1d58-4b9f-bd63-f84234e42f40_photo_2022-07-02_07-53-08.jpg",
@@ -555,6 +579,10 @@
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\ee678ad1-9236-45b8-8efe-ac8b1ef582d6_photo_2021-07-20_09-55-42.mp4",
       "PackagePath": "staticwebassets\\photos\\cover\\ee678ad1-9236-45b8-8efe-ac8b1ef582d6_photo_2021-07-20_09-55-42.mp4"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\f304851e-27a5-488e-acb2-9e81d8c7466f_images (1).jpg",
+      "PackagePath": "staticwebassets\\photos\\cover\\f304851e-27a5-488e-acb2-9e81d8c7466f_images (1).jpg"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\cover\\f768cbcb-3c0c-4418-a04b-0c4317206d36_images (3).jpg",

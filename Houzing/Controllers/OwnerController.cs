@@ -39,6 +39,23 @@ namespace Houzing.Controllers
             }
             return NotFound();
         }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _context.Owners == null)
+            {
+                return NotFound();
+            }
+
+            var owner = await _context.Owners
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (owner == null)
+            {
+                return NotFound();
+            }
+
+            return View(owner);
+        }
         // Create page is all memebers
 
         [Authorize(Roles="User")]

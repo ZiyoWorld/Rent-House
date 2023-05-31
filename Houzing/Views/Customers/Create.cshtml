@@ -5,7 +5,6 @@
 }
 
 <h1>Create</h1>
-
 <h4>Customer</h4>
 <hr />
 <div class="row">
@@ -14,55 +13,57 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
+                <input asp-for="FirstName" required class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataBirthday" class="control-label"></label>
-                <input asp-for="DataBirthday" class="form-control" />
+                <input asp-for="DataBirthday" required class="form-control" />
                 <span asp-validation-for="DataBirthday" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Citizienship" class="control-label"></label>
-                <input asp-for="Citizienship" class="form-control" />
+                <input asp-for="Citizienship" required class="form-control" />
                 <span asp-validation-for="Citizienship" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" required class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PasswordNumber" class="control-label"></label>
-                <input asp-for="PasswordNumber" class="form-control" />
+                <input asp-for="PasswordNumber" required class="form-control" />
                 <span asp-validation-for="PasswordNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LinkMessenger" class="control-label"></label>
-                <input asp-for="LinkMessenger" class="form-control" />
+                <input asp-for="LinkMessenger" required class="form-control" />
                 <span asp-validation-for="LinkMessenger" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Comment" class="control-label"></label>
-                <input asp-for="Comment" class="form-control" />
+                <input asp-for="Comment" required class="form-control" />
                 <span asp-validation-for="Comment" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
+                <input asp-for="Address" required class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="ApartmentId" class="control-label"></label>
+                <input asp-for="ApartmentId" value="@ViewBag.ApartId" readonly class="form-control" />
+                <span asp-validation-for="ApartmentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Next to Deals" class="btn mt-3 btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" asp-controller="Apartments">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
