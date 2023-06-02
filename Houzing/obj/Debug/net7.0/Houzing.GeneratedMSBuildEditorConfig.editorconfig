@@ -248,20 +248,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Home/Contact.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Home/HouseItem.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb3VzZUl0ZW0uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Home/Properties.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9wZXJ0aWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Home/_HomeLayout.cshtml]
@@ -282,10 +270,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/HouseValue/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG91c2VWYWx1ZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/MyHouses/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlIb3VzZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Owner/CreateOwner.cshtml]

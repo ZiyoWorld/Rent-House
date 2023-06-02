@@ -593,12 +593,72 @@
       "PackagePath": "staticwebassets\\photos\\cover\\fc90be8c-878c-4fd1-b60d-3352a4cb9355_photo-1568605114967-8130f3a36994.jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\95188-200.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\95188-200.png"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\No-Image-Placeholder.png",
       "PackagePath": "staticwebassets\\photos\\gallery\\No-Image-Placeholder.png"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\calendar.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\calendar.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\new1.jpg",
+      "PackagePath": "staticwebassets\\photos\\gallery\\new1.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\new2.jpg",
+      "PackagePath": "staticwebassets\\photos\\gallery\\new2.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\new3.jpeg",
+      "PackagePath": "staticwebassets\\photos\\gallery\\new3.jpeg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\new4.jpg",
+      "PackagePath": "staticwebassets\\photos\\gallery\\new4.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\new5.jpg",
+      "PackagePath": "staticwebassets\\photos\\gallery\\new5.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\new6.jpg",
+      "PackagePath": "staticwebassets\\photos\\gallery\\new6.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\new7.jpg",
+      "PackagePath": "staticwebassets\\photos\\gallery\\new7.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\new9.jpeg",
+      "PackagePath": "staticwebassets\\photos\\gallery\\new9.jpeg"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\no-image.jpg",
       "PackagePath": "staticwebassets\\photos\\gallery\\no-image.jpg"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\partner-1.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\partner-1.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\partner-2.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\partner-2.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\partner-3.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\partner-3.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\partner-4.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\partner-4.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\partner-5.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\partner-5.png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Houzing.Microsoft.AspNetCore.StaticWebAssets.props",

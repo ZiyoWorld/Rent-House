@@ -17,11 +17,20 @@ namespace Houzing.Controllers
         }
 
         [Authorize(Roles = "Admin, Employer")]
-        public IActionResult Index()
+        public IActionResult Index(string searchBy, string search)
         {
-            return View(_context.Owners.ToList());
+            if (searchBy == "Id")
+            {
+                return View(_context.Owners.Where(x => x.Id.ToString() == search || search == null).ToList());
+            } 
+            else if (searchBy == "Name") {
+                return View(_context.Owners.Where(x => x.FirstName == search || search == null).ToList());
+            }
+            else
+            {
+                return View(_context.Owners.ToList());
+            }
         }
-
         // Delete user by Id
         [Authorize(Roles = "Admin")]
         [HttpPost]

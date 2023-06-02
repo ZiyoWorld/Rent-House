@@ -3,14 +3,30 @@
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
+<div class="table-auto-layout mt-5">
 
-<div class="table-auto-layout">
+        <form asp-action="Index" asp-controller="Owner" method="post">
 
-
+            <div class="searchbar">
+                <select name="searchBy">
+                    <option value="Id">Id</option>
+                    <option value="Name">Name</option>
+                </select>
+                <input class="form-control w-25" name="search" />
+                <input class="btn btn-primary" type="submit" value="Search" />
+            </div>
+        </form>
+        <div>
+            <h3 class="text-dark">Owners List</h3>
+        </div>
 
 <table class="table table-hover table-bordered">
     <thead>
         <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -69,6 +85,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -133,4 +152,5 @@
 }
     </tbody>
 </table>
+</div>
 </div>

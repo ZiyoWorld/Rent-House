@@ -48,7 +48,7 @@
 <div>
     @if (SignInManager.IsSignedIn(User))
     {
-    <a asp-action="EditOwner" asp-route-id="@Model?.Id">Edit</a> 
+      <a asp-action="EditOwner" class="btn btn-info mr-3" asp-route-id="@Model?.Id">Edit</a> 
     }
-    <a asp-action="Index" asp-controller="Apartments">Back to Apartment</a>
+    <a asp-action="Index" class="btn btn-success" asp-controller="Apartments">Back to Apartment</a>
 </div>

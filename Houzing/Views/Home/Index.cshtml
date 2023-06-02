@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = "~/Views/Home/_HomeLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <section class="section-home">
   <div class="container-fluid">
@@ -34,11 +34,6 @@
   </div>
 
     @*this page for recommend that it has rented recently by customers*@
-  <div class="recommend">
-       <h1 class="text-center">Recommended</h1>
-       <div class="text-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
-  </div>
-
   <div class="why-choose">
    
       <h1 class="text-center">Why Choose Us</h1>
@@ -74,16 +69,96 @@
             </div>
       </div>
   </div>
-  @*this page for category homes*@
-    <div class="category">
-        <h1 class="text-center">Category</h1>
-         <div class="text-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
-    </div>
+  
 
     @*this page for recent rent houses*@
     <div class="recent-properties">
         <h1 class="text-center">Recent Properties for Rent</h1>
         <div class="text-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
+        <div class="row mt-3">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/photos/gallery/new1.jpg" style="width: 100%;" />
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <img alt="hozir" src="/photos/gallery/95188-200.png" style="width: 25px; height: 25px;" /> <span>New House</span>
+                            <img alt="hozir" src="/photos/gallery/calendar.png" style="width: 25px; height: 25px; margin-left: 10px;" /> <span>Posted on 06/20/2023.</span>
+                        </div>
+                        <div class="mt-2">
+                            <h5 class="text-dark">My house...</h5>
+                            <div>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum accusamus labore iste 
+                                maiores pariatur asperiores commodi mollitia minus, praesentium quis!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/photos/gallery/new4.jpg" style="width: 100%;" />
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <img alt="hozir" src="/photos/gallery/95188-200.png" style="width: 25px; height: 25px;" /> <span>New House</span>
+                            <img alt="hozir" src="/photos/gallery/calendar.png" style="width: 25px; height: 25px; margin-left: 10px;" /> <span>Posted on 06/20/2023.</span>
+                        </div>
+                        <div class="mt-2">
+                            <h5 class="text-dark">My house...</h5>
+                            <div>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum accusamus labore iste 
+                                maiores pariatur asperiores commodi mollitia minus, praesentium quis!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/photos/gallery/new7.jpg" style="width: 100%; height: 100%;" />
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <img alt="hozir" src="/photos/gallery/95188-200.png" style="width: 25px; height: 25px;" /> <span>New House</span>
+                            <img alt="hozir" src="/photos/gallery/calendar.png" style="width: 25px; height: 25px; margin-left: 10px;" /> <span>Posted on 06/20/2023.</span>
+                        </div>
+                        <div class="mt-2">
+                            <h5 class="text-dark">My house...</h5>
+                            <div>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum accusamus labore iste
+                                maiores pariatur asperiores commodi mollitia minus, praesentium quis!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*this page for recent rent houses*@
+    <div class="our-partners">
+        <h1 class="text-center">Our partners</h1>
+        <div class="text-center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
+        <ul class="partner-list">
+            <li>
+                <img src="/photos/gallery/partner-1.png" />
+            </li>
+            <li>
+                <img src="/photos/gallery/partner-2.png" />
+            </li>
+            <li>
+                <img src="/photos/gallery/partner-3.png" />
+            </li>
+            <li>
+                <img src="/photos/gallery/partner-4.png" />
+            </li>
+            <li>
+                <img src="/photos/gallery/partner-5.png" />
+            </li>
+        </ul>
     </div>
 </section>
 

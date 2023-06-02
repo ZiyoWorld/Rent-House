@@ -4,7 +4,7 @@
     Layout = "/Views/Apartments/_ApartmentLayout.cshtml";
 }
 
-<h1>ManageApartments</h1>
+<h1>Manage Apartments</h1>
 
 <table class="table table-bordered table-striped" border="1">
     <thead>
@@ -98,7 +98,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Owner.Id)
                 </td>
-                
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                </td>
                 <td>
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
                 </td>
@@ -109,3 +111,7 @@
         }
     </tbody>
 </table>
+<div class="text-center">
+    <a asp-action="Index" class="btn btn-secondary" asp-controller="Owner">Owners List</a>
+    <a asp-action="Index" class="btn btn-warning" asp-controller="HouseValue">House Item List</a>
+</div>

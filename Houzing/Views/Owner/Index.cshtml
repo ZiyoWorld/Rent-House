@@ -4,47 +4,60 @@
 }
 
 
-
-<table border="1" class="table table-hover mt-5 w-100">
-    <thead>
-        <tr>
-            <td>Id</td>
-            <td>FirstName</td>
-            <td>LastName</td>
-            <td>Email</td>
-            <td>Citizienships</td>
-            <td>DateBithday</td>
-            <td>PasportNumber</td>
-            <td>PhoneNumber</td>
-            <td>Edit</td>
-            <td>Delete</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in Model)
-        {
+<div class="container">
+    <form asp-action="Index" asp-controller="Owner" method="post">
+        
+        <div class="searchbar">
+            <select name="searchBy" >
+                <option value="Id">Id</option>
+                <option value="Name">Name</option>
+            </select>
+        <input class="form-control w-25" name="search" />
+        <input class="btn btn-primary" type="submit" value="Search" />
+        </div>
+    </form>
+    <div>
+        <h3 class="text-dark">Owners List</h3>
+    </div>
+    <table border="1" class="table table-bordered table-hover mt-5 w-100">
+        <thead>
             <tr>
-                <td>@user.Id</td>
-                <td>@user.FirstName</td>
-                <td>@user.LastName</td>
-                <td>@user.Email</td>
-                <td>@user.Citizenship</td>
-                <td>@user.DateBirthday</td>
-                <td>@user.PasportNumber</td>
-                <td>@user.PhoneNumber</td>
-                <td>
-                    <a asp-route-id="@user.Id" asp-action="EditOwner" class="btn btn-success">Edit</a>
-                </td>
-                <td>
-                    <form asp-controller="Owner" asp-action="Delete" method="post" asp-route-id="@user.Id">
-                        <input type="submit" value="Delete" class="btn btn-danger" />
-                    </form>
-                </td>
+                <td>Id</td>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>Email</td>
+                <td>Citizienships</td>
+                <td>DateBithday</td>
+                <td>PasportNumber</td>
+                <td>PhoneNumber</td>
+                <td>Edit</td>
+                <td>Delete</td>
             </tr>
-        }
-    </tbody>
-</table>
-
-
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.Citizenship</td>
+                    <td>@user.DateBirthday</td>
+                    <td>@user.PasportNumber</td>
+                    <td>@user.PhoneNumber</td>
+                    <td>
+                        <a asp-route-id="@user.Id" asp-action="EditOwner" class="btn btn-success">Edit</a>
+                    </td>
+                    <td>
+                        <form asp-controller="Owner" asp-action="Delete" method="post" asp-route-id="@user.Id">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
 
