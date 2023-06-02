@@ -21,7 +21,7 @@ namespace Houzing.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var allData = from a in _context.Apartments join h in _context.HouseItems on a.HouseItemId equals h.Id                      
+          var allData = from a in _context.Apartments join h in _context.HouseItems on a.HouseItemId equals h.Id                      
                           select new {
                               a.Id,
                               h.Room,

@@ -7,25 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Houzing.Data;
 using Houzing.Data.Houses;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Houzing.Controllers
 {
     public class CustomersController : Controller
     {
         private readonly ApplicationDbContext _context;
+
         public CustomersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        [Authorize(Roles ="Admin, Employer")]
         // GET: Customers
         public async Task<IActionResult> Index()
         {
-              return _context.Customer != null ? 
-                          View(await _context.Customer.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Customer'  is null.");
+            var applicationDbContext = _context.Customer.Include(c => c.Apartment);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Customers/Details/5
@@ -37,21 +35,24 @@ namespace Houzing.Controllers
             }
 
             var customer = await _context.Customer
+                .Include(c => c.Apartment)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (customer == null)
             {
                 return NotFound();
             }
+
             return View(customer);
         }
 
         // GET: Customers/Create
         public async Task<IActionResult> Create(int? id)
         {
-            Apartment a = await _context.Apartments.FindAsync((int?)id);
-            if(a != null)
+            ViewData["ApartmentId"] = new SelectList(_context.Apartments, "Id", "Id");
+            Apartment s = _context.Apartments.Find((int?)id);
+            if(s != null)
             {
-                ViewBag.ApartId = a;
+                ViewBag.Apart = s;
             }
             return View();
         }
@@ -61,7 +62,7 @@ namespace Houzing.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,DataBirthday,Citizienship,Email,PasswordNumber,LinkMessenger,Comment,Address")] Customer customer)
+        public async Task<IActionResult> Create([Bind("FirstName,DataBirthday,Citizienship,Email,PasswordNumber,LinkMessenger,Comment,Address,ApartmentId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -69,6 +70,7 @@ namespace Houzing.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Create", "Deals");
             }
+            ViewData["ApartmentId"] = new SelectList(_context.Apartments, "Id", "Id", customer.ApartmentId);
             return View(customer);
         }
 
@@ -85,6 +87,7 @@ namespace Houzing.Controllers
             {
                 return NotFound();
             }
+            ViewData["ApartmentId"] = new SelectList(_context.Apartments, "Id", "Id", customer.ApartmentId);
             return View(customer);
         }
 
@@ -93,7 +96,7 @@ namespace Houzing.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, [Bind("Id,FirstName,DataBirthday,Citizienship,Email,PasswordNumber,LinkMessenger,Comment,Address")] Customer customer)
+        public async Task<IActionResult> Edit(int? id, [Bind("Id,FirstName,DataBirthday,Citizienship,Email,PasswordNumber,LinkMessenger,Comment,Address,ApartmentId")] Customer customer)
         {
             if (id != customer.Id)
             {
@@ -120,6 +123,7 @@ namespace Houzing.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ApartmentId"] = new SelectList(_context.Apartments, "Id", "Id", customer.ApartmentId);
             return View(customer);
         }
 
@@ -132,6 +136,7 @@ namespace Houzing.Controllers
             }
 
             var customer = await _context.Customer
+                .Include(c => c.Apartment)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (customer == null)
             {
