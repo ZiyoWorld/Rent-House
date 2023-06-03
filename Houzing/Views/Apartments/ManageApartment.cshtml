@@ -4,11 +4,28 @@
     Layout = "/Views/Apartments/_ApartmentLayout.cshtml";
 }
 
+<div class="container">
+
+    <form asp-action="ManageApartment" asp-controller="Apartments" method="post">
+
+        <div class="searchbar">
+            <select name="searchBy">
+                <option value="Id">Id</option>
+                <option value="Adress">Adress</option>
+            </select>
+            <input class="form-control w-25" name="search" />
+            <input class="btn btn-primary" type="submit" value="Search" />
+        </div>
+    </form>
+
 <h1>Manage Apartments</h1>
 
 <table class="table table-bordered table-striped" border="1">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Adress)
             </th>
@@ -59,6 +76,9 @@
         @foreach (var item in Model)
         {
             <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Adress)
                 </td>
@@ -114,4 +134,6 @@
 <div class="text-center">
     <a asp-action="Index" class="btn btn-secondary" asp-controller="Owner">Owners List</a>
     <a asp-action="Index" class="btn btn-warning" asp-controller="HouseValue">House Item List</a>
+    <a asp-action="Index" asp-controller="Employers" class="btn btn-success">Employers List</a>
+    </div>
 </div>

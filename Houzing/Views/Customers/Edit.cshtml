@@ -55,18 +55,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApartmentId" class="control-label"></label>
-                <select asp-for="ApartmentId" class="form-control" value="@ViewBag.Apart.Id" asp-items="ViewBag.ApartmentId"></select>
+                <select asp-for="ApartmentId" class="form-control" asp-items="ViewBag.ApartmentId"></select>
                 <span asp-validation-for="ApartmentId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2 d-flex justify-content-start">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-info">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

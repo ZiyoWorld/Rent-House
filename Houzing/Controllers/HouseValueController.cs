@@ -29,9 +29,20 @@ namespace Houzing.Controllers
         }
         [Authorize(Roles = "Admin, Employer")]
         // GET: HouseItemsController
-        public ActionResult Index()
+        public IActionResult Index(string searchBy, string search)
         {
-            return View(_context.HouseItems.ToList());
+            if (searchBy == "Id")
+            {
+                return View(_context.HouseItems.Where(x => x.Id.ToString() == search || search == null).ToList());
+            }
+            else if (searchBy == "Name")
+            {
+                return View(_context.HouseItems.Where(x => x.Name == search || search == null).ToList());
+            }
+            else
+            {
+                return View(_context.HouseItems.ToList());
+            }
         }
 
         public async Task<IActionResult> Details(int? id)

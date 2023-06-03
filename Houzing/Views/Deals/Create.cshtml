@@ -1,0 +1,70 @@
+﻿@model Houzing.Data.Houses.Deal
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Deal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FromDeal" class="control-label"></label>
+                <input asp-for="FromDeal" type="date" class="form-control" />
+                <span asp-validation-for="FromDeal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToDeal" class="control-label"></label>
+                <input asp-for="ToDeal" type="date" class="form-control" />
+                <span asp-validation-for="ToDeal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateDeal" class="control-label"></label>
+                <input asp-for="DateDeal" type="date" class="form-control" />
+                <span asp-validation-for="DateDeal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summa" class="control-label"></label>
+                <input asp-for="Summa" class="form-control" />
+                <span asp-validation-for="Summa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PayType" class="control-label"></label>
+                <input asp-for="PayType" class="form-control" />
+                <span asp-validation-for="PayType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApartmentId" class="control-label"></label>
+                <input asp-for="ApartmentId" class ="form-control" asp-items="ViewBag.ApartmentId"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerId" class="control-label"></label>
+                <select asp-for="EmployerId" class ="form-control" asp-items="ViewBag.EmployerId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

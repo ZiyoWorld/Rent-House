@@ -45,10 +45,20 @@ namespace Houzing.Controllers
 
 
         [Authorize(Roles = "Admin, Employer")]
-        public async Task<IActionResult> ManageApartment()
+        public async Task<IActionResult> ManageApartment(string searchBy, string search)
         {
-            var applicationDbContext = _context.Apartments.Include(a => a.HouseItem).Include(a => a.Owner);
-            return View(await applicationDbContext.ToListAsync());
+            if (searchBy == "Id")
+            {
+                return View(await _context.Apartments.Where(x => x.Id.ToString() == search || search == null).ToListAsync());
+            }
+            else if (searchBy == "Adress")
+            {
+                return View( await _context.Apartments.Where(x => x.Adress == search || search == null).ToListAsync());
+            }
+            else
+            {
+                return View( await _context.Apartments.Include(a => a.HouseItem).Include(a => a.Owner).ToListAsync());
+            }
         }
         // GET: Apartments/Details/5
         public async Task<IActionResult> Details(int? id)

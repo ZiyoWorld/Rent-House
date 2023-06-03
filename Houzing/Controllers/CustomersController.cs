@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Houzing.Data;
 using Houzing.Data.Houses;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Houzing.Controllers
 {
@@ -19,6 +20,7 @@ namespace Houzing.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Admin, Employer")]
         // GET: Customers
         public async Task<IActionResult> Index()
         {
@@ -81,7 +83,6 @@ namespace Houzing.Controllers
             {
                 return NotFound();
             }
-
             var customer = await _context.Customer.FindAsync(id);
             if (customer == null)
             {
