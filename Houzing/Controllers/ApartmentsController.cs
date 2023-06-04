@@ -19,7 +19,7 @@ namespace Houzing.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchBy, string search)
         {
           var allData = from a in _context.Apartments join h in _context.HouseItems on a.HouseItemId equals h.Id                      
                           select new {
@@ -38,7 +38,27 @@ namespace Houzing.Controllers
                               a.Country,
                               h.Name,
                                };
-            ViewBag.AllData = allData;
+            if (searchBy == "Adress")
+            {
+                ViewBag.AllData = allData.Where(x => x.Adress == search || search == null);
+            }
+            else if (searchBy == "Room")
+            {
+                ViewBag.AllData = allData.Where(x => x.Room == search || search == null);
+            }
+            else if (searchBy == "MinPrice")
+            {
+                ViewBag.AllData = allData.Where(x => x.MinPrice == search || search == null);
+            }
+            else if (searchBy == "Region")
+            {
+                ViewBag.AllData = allData.Where(x => x.Region == search || search == null);
+            }
+            else
+            {
+                ViewBag.AllData = allData;
+            }
+            
 
             return View();
         }

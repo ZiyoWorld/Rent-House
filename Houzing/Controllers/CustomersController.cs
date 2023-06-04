@@ -122,7 +122,7 @@ namespace Houzing.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("ManageDeals", "Deals");
             }
             ViewData["ApartmentId"] = new SelectList(_context.Apartments, "Id", "Id", customer.ApartmentId);
             return View(customer);

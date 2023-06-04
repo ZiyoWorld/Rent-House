@@ -8,7 +8,8 @@
 {
     <a class="btn btn-danger text-white mx-2 text-dark font-size-sm" asp-controller="UsersRoles" asp-action="Index">Manage User</a>
 }
-   <a class="btn" asp-controller="Deals" style="margin-right: 20px;" asp-action="Index">
+   
+   <a class="btn" asp-controller="Deals" style="margin-right: 20px;" asp-action="ManageDeals">
        <img src="/assets/icons/House.png" style="width: 25px; height: 25px; background:white; " alt="Korzina" />
    </a>
 
@@ -23,7 +24,7 @@
                 <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Manage Account</a>
             </li>
             <li>
-                <a class="nav-link text-dark" href="/MyHouses/Index"  title="MyProperties">My Properties</a>
+                <a class="nav-link text-dark" href="/Home/MyProperties"  title="MyProperties">My Properties</a>
             </li>
             <li>
                 <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

@@ -9,7 +9,20 @@
 }
 
 <div class="container">
-        <h1 class="text-center">Properties</h1>
+       
+    <form asp-action="Index" asp-controller="Apartments" method="post">
+        <div class="searchbar">
+            <select name="searchBy">
+                <option value="Adress">Adress</option>
+                <option value="Room">Room</option>
+                <option value="MinPrice">MinPrice</option>
+                <option value="Region">Region</option>
+            </select>
+            <input class="form-control w-25" name="search" />
+            <input class="btn btn-primary" type="submit" value="Search" />
+        </div>
+    </form>
+    <h1 class="text-center">Properties</h1>
     <div class="wrapper-section">
         <div class="wrapper-card">
             @foreach (var item in ViewBag.AllData)

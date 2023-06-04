@@ -228,6 +228,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Deals/Completly.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVhbHNcQ29tcGxldGx5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Deals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVhbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -246,6 +250,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Deals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVhbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Deals/ManageDeals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVhbHNcTWFuYWdlRGVhbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Employers/Create.cshtml]
@@ -272,8 +280,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Home/_HomeLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfSG9tZUxheW91dC5jc2h0bWw=
+[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Home/MyProperties.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVByb3BlcnRpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/HouseValue/CreateHouseItems.cshtml]
@@ -306,14 +314,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Owner/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3duZXJcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Properties/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydGllc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Properties/_PropertiesLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydGllc1xfUHJvcGVydGllc0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/myfiles/BGTU/Example/Houzing/Houzing/Views/Shared/Error.cshtml]

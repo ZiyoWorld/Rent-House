@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Houzing.Data;
 using Houzing.Data.Houses;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Houzing.Controllers
 {
@@ -41,10 +42,37 @@ namespace Houzing.Controllers
                 return View(await _context.Deal.Include(d => d.Apartment).Include(d => d.Customer).Include(d => d.Employer).ToListAsync());
             }
         }
-        public async Task<IActionResult> ManageDeals()
+        public async Task<IActionResult> ManageDeals(string searchBy, string search)
         {
-            var applicationDbContext = _context.Deal.Include(d => d.Apartment).Include(d => d.Customer).Include(d => d.Employer);
-            return View(await applicationDbContext.ToListAsync());
+            var customerData = from a in _context.Customer
+                          join h in _context.Deal on a.Id equals h.CustomerId
+                          select new
+                          {
+                              h.Id,
+                              h.DateDeal,
+                              a.Email,
+                              h.Summa,
+                              h.PayType,
+                              a.FirstName,
+                              h.CustomerId,
+                          };
+            if (searchBy == "Id")
+            {
+                ViewBag.CustomerData = customerData.Where(x =>x.Id.ToString() == search || search == null);
+            }else if(searchBy == "FirstName")
+            {
+                ViewBag.CustomerData = customerData.Where(x => x.FirstName == search || search == null);
+            }
+            else
+            {
+              ViewBag.CustomerData = customerData;
+            }
+            return View();
+        }
+
+        public async Task<IActionResult> Completly()
+        {
+            return View();
         }
 
         // GET: Deals/Details/5
@@ -67,13 +95,18 @@ namespace Houzing.Controllers
 
             return View(deal);
         }
-
         // GET: Deals/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
+            
             ViewData["ApartmentId"] = new SelectList(_context.Apartments, "Id", "Id");
             ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id");
             ViewData["EmployerId"] = new SelectList(_context.Employer, "Id", "Id");
+            Customer s = _context.Customer.Find((int?)id);
+            if (s != null)
+            {
+                ViewBag.Customer = s;
+            }
             return View();
         }
 
@@ -88,7 +121,7 @@ namespace Houzing.Controllers
             {
                 _context.Add(deal);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Completly));
             }
             ViewData["ApartmentId"] = new SelectList(_context.Apartments, "Id", "Id", deal.ApartmentId);
             ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id", deal.CustomerId);
@@ -145,7 +178,7 @@ namespace Houzing.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ManageDeals));
             }
             ViewData["ApartmentId"] = new SelectList(_context.Apartments, "Id", "Id", deal.ApartmentId);
             ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id", deal.CustomerId);
@@ -190,7 +223,7 @@ namespace Houzing.Controllers
             }
             
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ManageDeals));
         }
 
         private bool DealExists(int id)

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Houzing.Data.Houses.Deal>
+@using Houzing.Data;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@{
+    ViewData["Title"] = "Manage Deals";
+}
+
+<div class="container">
+    <form asp-action="ManageDeals" asp-controller="Deals" method="post">
+        <div class="searchbar">
+            <select name="searchBy">
+                <option value="Id">Id</option>
+                <option value="FirstName">FirstName</option>
+            </select>
+            <input class="form-control w-25" name="search" />
+            <input class="btn btn-primary" type="submit" value="Search" />
+        </div>
+    </form>
+    <div>Deals</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    FirstName
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    DateDeal
+                </th>
+                <th>
+                    Summa
+                </th>
+                <th>
+                    PayType
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Details
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.CustomerData)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.FirstName
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.DateDeal
+                    </td>
+                    <td>
+                        @item.Summa
+                    </td>
+                    <td>
+                        @item.PayType
+                    </td>
+                    <td>
+                        <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.Id">Edit </a> |
+                        <a asp-action="Details" class="btn btn-success" asp-controller="Customers"  asp-route-id="@item.CustomerId">Own Data Details </a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" class="btn btn-success" asp-route-id="@item.Id">Details</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (User.IsInRole("Admin") || User.IsInRole("Employer"))
+    {
+        <div style="display: flex; justify-content: flex-start; align-items: center;" class="my-3">
+             <a asp-action="Index" class="btn btn-info" asp-controller="Customers">Manage Customers List</a>
+             <a asp-action="Index" class="btn btn-primary mx-2" asp-controller="Deals">Manage Deals List</a>
+        </div>
+    }
+</div>
