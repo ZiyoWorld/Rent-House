@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Houzing.Data;
 using Houzing.Data.Houses;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Houzing.Controllers
 {
@@ -20,12 +21,27 @@ namespace Houzing.Controllers
         }
 
         // GET: Deals
-        public async Task<IActionResult> Index()
+        [Authorize(Roles = "Admin, Employer")]
+        public async Task<IActionResult> Index(string searchBy, string search)
         {
-            var applicationDbContext = _context.Deal.Include(d => d.Apartment).Include(d => d.Customer).Include(d => d.Employer);
-            return View(await applicationDbContext.ToListAsync());
+            if (searchBy == "Id")
+            {
+                return View( await _context.Deal.Where(x => x.Id.ToString() == search || search == null)
+                    .Include(d => d.Apartment).Include(d => d.Customer).Include(d => d.Employer)
+                    .ToListAsync());
+            }
+            else if (searchBy == "DateDeal")
+            {
+                return View( await _context.Deal.Where(x => x.DateDeal.ToString() == search || search == null)
+                    .Include(d => d.Apartment).Include(d => d.Customer).Include(d => d.Employer)
+                    .ToListAsync());
+            }
+            else
+            {
+                return View(await _context.Deal.Include(d => d.Apartment).Include(d => d.Customer).Include(d => d.Employer).ToListAsync());
+            }
         }
-        public async Task<IActionResult> ManageIndex()
+        public async Task<IActionResult> ManageDeals()
         {
             var applicationDbContext = _context.Deal.Include(d => d.Apartment).Include(d => d.Customer).Include(d => d.Employer);
             return View(await applicationDbContext.ToListAsync());

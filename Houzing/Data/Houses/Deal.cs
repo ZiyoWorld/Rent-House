@@ -6,9 +6,9 @@ namespace Houzing.Data.Houses
     {
         public int Id { get; set; }
         public string? Type { get; set; }
-        public DateTime? FromDeal { get; set; }
-        public DateTime? ToDeal { get; set; }
-        public DateTime? DateDeal { get; set; }
+        public string? FromDeal { get; set; }
+        public string? ToDeal { get; set; }
+        public string? DateDeal { get; set; }
         public decimal? Summa { get; set; }
         public string? PayType { get; set; }
         [ForeignKey("ApartmentId")]

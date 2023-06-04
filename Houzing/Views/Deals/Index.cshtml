@@ -4,80 +4,107 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FromDeal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ToDeal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateDeal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Summa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PayType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apartment)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employer)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FromDeal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ToDeal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateDeal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Summa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PayType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apartment.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Employer.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container">
+    <form asp-action="Index" asp-controller="Deals" method="post">
+        <div class="searchbar">
+            <select name="searchBy">
+                <option value="Id">Id</option>
+                <option value="DateDeal">DateDeal</option>
+            </select>
+            <input class="form-control w-25" name="search" />
+            <input class="btn btn-primary" type="submit" value="Search" />
+        </div>
+    </form>
+    <div>Deals</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FromDeal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ToDeal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateDeal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Summa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PayType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apartment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employer)
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Details
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FromDeal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ToDeal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateDeal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Summa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PayType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apartment.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employer.Id)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.Id">Edit</a> 
+                    </td>
+                    <td>
+                        <a asp-action="Details" class="btn btn-success" asp-route-id="@item.Id">Details</a> 
+                    </td>
+                    <td>
+                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

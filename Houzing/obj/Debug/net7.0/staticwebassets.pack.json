@@ -57,8 +57,20 @@
       "PackagePath": "staticwebassets\\assets\\icons\\edit.png"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\email 1.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\email 1.png"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\for sale.png",
       "PackagePath": "staticwebassets\\assets\\icons\\for sale.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\phone.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\phone.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\pin.png",
+      "PackagePath": "staticwebassets\\assets\\icons\\pin.png"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\assets\\icons\\ruler.png",
@@ -593,12 +605,28 @@
       "PackagePath": "staticwebassets\\photos\\cover\\fc90be8c-878c-4fd1-b60d-3352a4cb9355_photo-1568605114967-8130f3a36994.jpg"
     },
     {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\124010.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\124010.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\174857.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\174857.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\87390.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\87390.png"
+    },
+    {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\95188-200.png",
       "PackagePath": "staticwebassets\\photos\\gallery\\95188-200.png"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\No-Image-Placeholder.png",
       "PackagePath": "staticwebassets\\photos\\gallery\\No-Image-Placeholder.png"
+    },
+    {
+      "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\Telegram_logo.svg.png",
+      "PackagePath": "staticwebassets\\photos\\gallery\\Telegram_logo.svg.png"
     },
     {
       "Id": "C:\\myfiles\\BGTU\\Example\\Houzing\\Houzing\\wwwroot\\photos\\gallery\\calendar.png",

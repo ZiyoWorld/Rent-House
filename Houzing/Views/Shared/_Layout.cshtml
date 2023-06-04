@@ -47,17 +47,81 @@
 
 
 
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container mb-5" style="padding-bottom: 350px;">
+        <main role="main" class="main pb-3">
             @RenderBody()
         </main>
     </div>
     
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Houzing 
+    <footer class="">
+        <div class="wrapper-footer">
+            <ul class="wrap-left" style="list-style: none;">
+                <li class="text-white">Contact Us</li>
+                <li class="">
+                    <img src="/assets/icons/pin.png" alt="alt-png" />
+                    329 Queensberry Street, North Melbourne VIC 3051, Australia.
+                </li>
+                <li>
+                    <img src="/assets/icons/phone.png" alt="phone" />
+                    +375259478867
+                </li>
+                <li>
+                    <img src="/assets/icons/email 1.png" alt="Email"/>
+                    support@houzing.com
+                </li>
+                <li class="wrapper-links">
+                    <img src="/photos/gallery/124010.png" alt="facebook" />
+                    <img src="/photos/gallery/Telegram_logo.svg.png" alt="telegram" />
+                    <img src="/photos/gallery/87390.png" alt="instagram" />
+                    <img src="/photos/gallery/174857.png" alt="linkedin" />
+                </li>
+            </ul>
+            <ul class="wrap-right">
+                <li>
+                    Discover
+                </li>
+                <li>
+                    Uzbekistan
+                </li>
+                <li>
+                    Belorus
+                </li>
+                <li>
+                    Russia
+                </li>
+                <li>
+                    Kazakhstan
+                </li>
+            </ul>
+            <ul class="wrap-right">
+                <li>Lists by Category</li>
+                <li>Houses</li>
+                <li>Apartment</li>
+                <li>Condos</li>
+                <li>Offices</li>
+                <li>Retail</li>
+                <li>Villias</li>
+            </ul>
+            <ul class="wrap-right">
+                <li>Lists About Us</li>
+                <li>About Us</li>
+                <li>Terms & Conditions</li>
+                <li>Support Center</li>
+                <li>Contact Us</li>
+            </ul>
         </div>
+
+        <div class="footer-bottom">
+            <a class="navbar-brand d-inline-flex text-white" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="/assets/imgs/logo.png" alt="logo" style="width: 30px; height: 36px;" />
+                <p class="h4 mx-2 logo-text">Houzing</p>
+            </a>
+            <div class="text-white">
+                Copyright © 2023 CreativeLayers. All Right Reserved.
+            </div>
+        </div>
+        
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

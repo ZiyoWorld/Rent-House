@@ -481,6 +481,80 @@ iframe {
 .searchbar select, input {
     margin: 0 5px;
 }
+
+/*footer section*/
+footer {
+    background-color: #0D263B;
+    padding: 10px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+}
+.wrapper-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    width: 100%;
+    padding: 10px 0;
+}
+.wrapper-links{
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+.wrapper-links img{
+    width: 25px;
+    height: 30px;
+    margin: 20px 10px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.wrapper-links img:hover{
+    transform: scale(1.1);
+}
+.wrap-left{
+    list-style:none;
+}
+.wrap-left li{
+    margin: 15px 0;
+    color: #fff;
+    cursor: pointer;
+}
+.wrap-left {
+    width: 40%;
+}
+.wrap-right{
+    list-style:none;
+}
+.wrap-right li{
+    color: white;
+    margin: 20px 0;
+    cursor: pointer;
+}
+.wrap-left li:hover{
+    color: firebrick;
+}
+.wrap-right li:hover {
+    color: firebrick;
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #fff;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.main {
+    padding-bottom: 200px 0;
+}
 /*navbar media*/
 @media (min-width: 0px) and (max-width: 375px) {
     header{

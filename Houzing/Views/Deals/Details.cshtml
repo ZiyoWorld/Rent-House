@@ -4,69 +4,72 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Deal</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FromDeal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FromDeal)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ToDeal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ToDeal)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateDeal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateDeal)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Summa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Summa)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PayType)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PayType)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Apartment)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Apartment.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Customer)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Customer.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Employer)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Employer.Id)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="container">
+    <div class="text-dark h4">
+        Create new Deal!
+    </div>
+    <div>
+        <h4>Deal</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FromDeal)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FromDeal)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ToDeal)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ToDeal)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DateDeal)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateDeal)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Summa)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Summa)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PayType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PayType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Apartment)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Apartment.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Customer)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Customer.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Employer)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Employer.Id)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model?.Id">Edit</a> |
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
 </div>

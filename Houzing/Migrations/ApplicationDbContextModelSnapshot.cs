@@ -208,14 +208,14 @@ namespace Houzing.Migrations
                     b.Property<int?>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("DateDeal")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateDeal")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("EmployerId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("FromDeal")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("FromDeal")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PayType")
                         .HasColumnType("nvarchar(max)");
@@ -223,8 +223,8 @@ namespace Houzing.Migrations
                     b.Property<decimal?>("Summa")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime?>("ToDeal")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ToDeal")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
                         .HasColumnType("nvarchar(max)");
