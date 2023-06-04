@@ -9,7 +9,7 @@ namespace Houzing.Data.Houses
         public string? FromDeal { get; set; }
         public string? ToDeal { get; set; }
         public string? DateDeal { get; set; }
-        public decimal? Summa { get; set; }
+        public int? Summa { get; set; }
         public string? PayType { get; set; }
         [ForeignKey("ApartmentId")]
         public int? ApartmentId { get; set; }

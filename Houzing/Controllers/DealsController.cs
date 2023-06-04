@@ -96,17 +96,15 @@ namespace Houzing.Controllers
             return View(deal);
         }
         // GET: Deals/Create
-        public IActionResult Create(int id)
+        public IActionResult Create()
         {
             
             ViewData["ApartmentId"] = new SelectList(_context.Apartments, "Id", "Id");
             ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id");
             ViewData["EmployerId"] = new SelectList(_context.Employer, "Id", "Id");
-            Customer s = _context.Customer.Find((int?)id);
-            if (s != null)
-            {
-                ViewBag.Customer = s;
-            }
+            ViewBag.CustomerId = _context.Customer.ToList().LastOrDefault().Id;
+            ViewBag.EmployerId = _context.Employer.ToList().LastOrDefault().Id;
+            ViewBag.ApartmentId = _context.Customer.ToList().LastOrDefault().ApartmentId;
             return View();
         }
 

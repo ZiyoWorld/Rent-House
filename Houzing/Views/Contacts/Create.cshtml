@@ -1,0 +1,53 @@
+﻿@model Houzing.Data.Houses.Contact
+@using Houzing.Data;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container my-2">
+    <div class="text-center h2">
+        Contact with member of Houzing
+    </div>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" placeholder="Enter your Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Enter your Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" placeholder="Enter your Phone" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="Purpose" class="control-label"></label>
+                <textarea asp-for="Purpose" class="form-control my-1" placeholder="Leave a purpose here" style="height:50px;"></textarea>
+            </div>
+            <div class="form-group my-3">
+                <input type="submit" value="Send Message" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+    @if (User.IsInRole("Admin") || User.IsInRole("Employer"))
+    {
+        <div style="display: flex; justify-content: flex-start; align-items: center;" class="my-3">
+            <a asp-action="Index" class="btn btn-info" asp-controller="Contacts">Contact List</a>
+        </div>
+    }
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

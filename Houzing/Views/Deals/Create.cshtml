@@ -48,15 +48,15 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="ApartmentId" class="control-label"></label>
-                    <input asp-for="ApartmentId" readonly class="form-control" value="@ViewBag.Customer.ApartmentId" />
+                    <input asp-for="ApartmentId" readonly class="form-control" value="@ViewBag.ApartmentId" />
                 </div>
                 <div class="form-group">
                     <label asp-for="CustomerId" class="control-label"></label>
-                    <input asp-for="CustomerId" readonly class="form-control" value="ViewBag.Customer.Id" />
+                    <input asp-for="CustomerId" readonly class="form-control" value="@ViewBag.CustomerId" />
                 </div>
                 <div class="form-group">
                     <label asp-for="EmployerId" class="control-label"></label>
-                    <input asp-for="EmployerId" readonly class="form-control" asp-items="ViewBag.EmployerId"/>
+                    <input asp-for="EmployerId" readonly class="form-control" value="@ViewBag.EmployerId" />
                 </div>
                 <div class="form-group mt-3" style="display: flex; justify-content: flex-start; align-items: center;" >
                     <input type="submit" value="Create" class="btn btn-primary" />
